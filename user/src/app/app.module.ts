@@ -14,6 +14,8 @@ import { Page2Page } from '../pages/page2/page2';
 import { FilterPage } from '../pages/filter/filter';
 import { FormsModule } from '@angular/forms';
 
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +30,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

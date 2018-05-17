@@ -10,35 +10,52 @@ import { AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  @Input() location : string
-    
+  @Input() location: string
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
-    
+
   }
-  
-  onLoadPlaces()
-  {
-      if(this.location == undefined)
+
+  onLoadPlaces() {
+    if (this.location == undefined) {
+      this.presentAlert();
+      //console.log("hello");
+    }
+    else {
+
+      this.location = undefined;
+      this.navCtrl.push(Page2Page);
+      //console.log("world");
+    }
+  }
+
+  tryMe() {
+    console.log('Clicked')
+    window['firebase'].firestore().collection("resturant").add(
       {
-        this.presentAlert();
-        //console.log("hello");
-      } 
-      else
-      {
-       
-        this.location = undefined;
-        this.navCtrl.push(Page2Page);
-        //console.log("world");
+        first: "Ada",
+        last: "Lovelace",
+        born: 1815
       }
-        
-
-        
+    )
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
   }
 
-  presentAlert() 
-  {
+  createNewUser(email: string, password: string) {
+    window['firebase'].auth().createUserWithEmailAndPassword(email, password)
+  }
+
+  getRes(location: string) {
+
+  }
+
+  presentAlert() {
     let alert = this.alertCtrl.create({
-      
+
       title: 'שגיאה',
       subTitle: 'אתה חייב להכניס מיקום',
       cssClass: 'rtlAlert',
