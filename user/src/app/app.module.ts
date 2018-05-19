@@ -15,6 +15,7 @@ import { FilterPage } from '../pages/filter/filter';
 import { FormsModule } from '@angular/forms';
 
 import { HttpModule } from '@angular/http';
+import { FirebaseService } from './firebase-service/firebase.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpModule } from '@angular/http';
     HomePage,
     TabsPage,
     Page2Page,
-    FilterPage
+    FilterPage,
+    FirebaseService,
     
   ],
   imports: [
@@ -44,6 +46,7 @@ import { HttpModule } from '@angular/http';
     FilterPage
   ],
   providers: [
+    FirebaseService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

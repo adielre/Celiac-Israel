@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Page2Page } from '../page2/page2';
 import { AlertController } from 'ionic-angular';
+import { FirebaseService } from '../../app/firebase-service/firebase.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { AlertController } from 'ionic-angular';
 export class HomePage {
 
   @Input() location: string
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService) {
 
   }
 
