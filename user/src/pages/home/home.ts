@@ -13,8 +13,8 @@ export class HomePage {
   
   @ViewChild('searchBox') searchString
   @Input() location: string//delete?
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
-   // private firebase: FirebaseService
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService) {
+    
   }
 
  /* openPlaceList() {
