@@ -16,7 +16,7 @@ export class AddEditScreenComponent implements OnInit {
 
   namePlace: string;
   Address: string;
-  phone: number;
+  phone: string;
   email: string;
 
   typeDishes: string;
@@ -29,8 +29,8 @@ export class AddEditScreenComponent implements OnInit {
   sensitivePreferences: {gfMenu: boolean,sensitivity: string,preferences: string, accessibility: boolean, kosher: boolean}={
     gfMenu: false/*Gluten free menu*/,sensitivity: "",preferences: "", accessibility: false, kosher: false
   }
-  linksUrl:{ website: string, facebook:  string;}={
-    website: "",    facebook:  ""
+  linksUrl:{ website: string, logo: string ,facebook:  string;}={
+    website: "", logo:"",   facebook:  ""
   }
  /* location_in_map:{x:number, y: number}={
     x:0, y:0

@@ -23,7 +23,7 @@
       טלפון:
     </div>
     <div class="col-10">
-      <input type="number" class="form-control" placeholder="הכנס מס' טלפון..."  [(ngModel)]="phone">
+      <input type="text" class="form-control" placeholder="הכנס מס' טלפון..."  [(ngModel)]="phone">
     </div>
   </div>
 
@@ -42,14 +42,21 @@
 
   <div class="row">
       <div class="labels col-2">
+          כתובת תמונת המסעדה:
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control" placeholder="הכנס כתובת אתר תמונה..." [(ngModel)]="linksUrl.logo">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="labels col-2">
           כתובת פייסבוק:
       </div>
       <div class="col-10">
         <input type="text" class="form-control" placeholder="הכנס כתובת פייסבוק..." [(ngModel)]="linksUrl.facebook">
       </div>
     </div>
-
-
 
   <div class="row">
     <div class="labels col-2">
