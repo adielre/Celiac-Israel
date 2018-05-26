@@ -14,6 +14,7 @@ import { Page2Page } from '../pages/page2/page2';
 import { FilterPage } from '../pages/filter/filter';
 import { FormsModule } from '@angular/forms';
 
+//import {HttpClientModule} from '@angular/common/http'
 import { HttpModule } from '@angular/http';
 import { FirebaseService } from './firebase-service/firebase.service';
 
@@ -26,13 +27,14 @@ import { FirebaseService } from './firebase-service/firebase.service';
     TabsPage,
     Page2Page,
     FilterPage,
-    FirebaseService,
+    //FirebaseService,
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FormsModule,
+  //  HttpClientModule
     HttpModule
   ],
   bootstrap: [IonicApp],

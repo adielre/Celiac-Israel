@@ -1,8 +1,9 @@
 import { Component, Input,ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Page2Page } from '../page2/page2';
-import { AlertController } from 'ionic-angular';
 import { FirebaseService } from '../../app/firebase-service/firebase.service';
+
+
 
 @Component({
   selector: 'page-home',
@@ -12,23 +13,23 @@ export class HomePage {
 
   
   @ViewChild('searchBox') searchString
-  @Input() location: string//delete?
+  //@Input() location: string
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService) {
     
   }
 
- /* openPlaceList() {
+  openPlaceList() {
     this.firebase.queryFirestore().fromCollection('resturant').field('location').equals(this.searchString.value).runQuery()
       .then(function (res) {
-        if (res.length === 0) {
+         if (res.length === 0) {
           alert('NO RESTURANT IN THIS LOCATION!')
         } else {
           //alert(this.result)
-          this.navCtrl.push(PlacelistPage, { result: res });
+          this.navCtrl.push(Page2Page, { result: res });
         }
       }.bind(this))
 
-  }*/
+  }
 
 
   /*onLoadPlaces() {
@@ -42,7 +43,7 @@ export class HomePage {
       this.navCtrl.push(Page2Page);
       //console.log("world");
     }
-  }*/
+  }
 
   tryMe() {
     console.log('Clicked')
@@ -60,7 +61,7 @@ export class HomePage {
         console.error("Error adding document: ", error);
       });
   }
-
+*/
   createNewUser(email: string, password: string) {
     window['firebase'].auth().createUserWithEmailAndPassword(email, password)
   }
@@ -69,7 +70,7 @@ export class HomePage {
 
   }
 
-  presentAlert() {
+ /* presentAlert() {
     let alert = this.alertCtrl.create({
 
       title: 'שגיאה',
@@ -78,6 +79,5 @@ export class HomePage {
       buttons: ['אשר']
     });
     alert.present();
-  }
-
+  }*/
 }
