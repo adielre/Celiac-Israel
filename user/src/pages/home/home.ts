@@ -2,7 +2,7 @@ import { Component, Input,ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Page2Page } from '../page2/page2';
 import { AlertController } from 'ionic-angular';
-
+import { FirebaseService } from '../../app/firebase-service/firebase.service';
 
 @Component({
   selector: 'page-home',
@@ -14,11 +14,22 @@ export class HomePage {
   @ViewChild('searchBox') searchString
   @Input() location: string//delete?
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
-
+   // private firebase: FirebaseService
   }
-  openPlaceList(){
 
-  }
+ /* openPlaceList() {
+    this.firebase.queryFirestore().fromCollection('resturant').field('location').equals(this.searchString.value).runQuery()
+      .then(function (res) {
+        if (res.length === 0) {
+          alert('NO RESTURANT IN THIS LOCATION!')
+        } else {
+          //alert(this.result)
+          this.navCtrl.push(PlacelistPage, { result: res });
+        }
+      }.bind(this))
+
+  }*/
+
 
   /*onLoadPlaces() {
     if (this.location == undefined) {
