@@ -1,6 +1,6 @@
 page-home {
 
-    #inputBox
+   /* #inputBox
     {
         display: block;
         margin-left: auto;
@@ -8,9 +8,21 @@ page-home {
         width: 100%;
         padding-top: 10px;
         direction: rtl;
-    }
+        
 
-    
+    }*/
+
+    #inputBox
+    {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        padding-top: 10px;
+        direction: rtl;
+        border: 2px solid rgb(67, 182, 235);
+
+    }  
     
 }
 .rtlAlert {

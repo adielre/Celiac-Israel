@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Page2Page } from '../page2/page2';
 import { AlertController } from 'ionic-angular';
@@ -10,12 +10,17 @@ import { AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  @Input() location: string
+  
+  @ViewChild('searchBox') searchString
+  @Input() location: string//delete?
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
 
   }
+  openPlaceList(){
 
-  onLoadPlaces() {
+  }
+
+  /*onLoadPlaces() {
     if (this.location == undefined) {
       this.presentAlert();
       //console.log("hello");
@@ -26,7 +31,7 @@ export class HomePage {
       this.navCtrl.push(Page2Page);
       //console.log("world");
     }
-  }
+  }*/
 
   tryMe() {
     console.log('Clicked')
