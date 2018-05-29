@@ -15,7 +15,7 @@ import { FilterPage } from '../filter/filter';
   templateUrl: 'page2.html',
 })
 export class Page2Page {
-
+  result: Array<any>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
    
   }
@@ -33,6 +33,18 @@ export class Page2Page {
     this.navCtrl.pop();
   }
 
+
+  ionViewDidLoad() {
+    
+    // let str: string;
+     
+     console.log('ionViewDidLoad PlacelistPage');
+ 
+     this.result = this.navParams.get('result');
+     if( this.result==null){
+       alert("STOP")
+     }
+}
   
   
 
