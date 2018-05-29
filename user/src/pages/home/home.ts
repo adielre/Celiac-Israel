@@ -13,7 +13,7 @@ export class HomePage {
 
   
   @ViewChild('searchBox') searchString
-  //@Input() location: string
+  @Input() location: string
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService) {
     
   }
@@ -32,7 +32,7 @@ export class HomePage {
   }
 
 
-  /*onLoadPlaces() {
+  onLoadPlaces() {
     if (this.location == undefined) {
       this.presentAlert();
       //console.log("hello");
@@ -61,7 +61,7 @@ export class HomePage {
         console.error("Error adding document: ", error);
       });
   }
-*/
+
   createNewUser(email: string, password: string) {
     window['firebase'].auth().createUserWithEmailAndPassword(email, password)
   }
@@ -70,7 +70,7 @@ export class HomePage {
 
   }
 
- /* presentAlert() {
+  presentAlert() {
     let alert = this.alertCtrl.create({
 
       title: 'שגיאה',
@@ -79,5 +79,5 @@ export class HomePage {
       buttons: ['אשר']
     });
     alert.present();
-  }*/
+  }
 }
