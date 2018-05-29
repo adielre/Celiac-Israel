@@ -1,34 +1,34 @@
-<!--
-  Generated template for the Page2Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Places</ion-title>
+    <ion-title>רשימת מסעדות</ion-title>
   </ion-navbar>
 
 </ion-header>
-  
- 
-<ion-content padding>
- 
-  <h4 style="margin-left: 20%; margin-top: 6%;  text-decoration-line: underline;  font-weight: bold;"> כאן יוצגו רשימת בתי קפה/מסעדות</h4>
-  <ul style="direction: rtl;">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
 
-  <button ion-button   style="margin-left: 25%; width: 50%; margin-top: 4%;" round (click)="onLoadFilterScreen()">סנן</button>  
-  
+
+
+<ion-content padding>
+  <ion-grid *ngFor='let res of result'>
+    <ion-row>
+      <ion-col col-2 >
+       <img src={{res.imgurl}} (touchend)= "goToSite(res)"   >
+      </ion-col>
+      <ion-col col-3 >
+        {{res.name}}
+       </ion-col>
+       <ion-col col-6 >
+       שעות פתיחה:
+       {{res.opening }}
+       <br>
+       טלפון:
+       {{res.phone}}
+       </ion-col>
+       <ion-col col-1 >
+        <img src="assets/imgs/place-icon.png">
+       </ion-col>
+    </ion-row>
+  </ion-grid>  
+
+    <button ion-button outline (click)="popThis()">חזור אחורה</button>
 </ion-content>

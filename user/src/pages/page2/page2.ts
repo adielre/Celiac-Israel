@@ -24,6 +24,14 @@ export class Page2Page {
   {
     this.navCtrl.push(FilterPage);
   }
+  goToSite(param){
+    //console.log(param)
+   window.open(param.site_url,'_self'); // self how to open the site 
+  }
+
+  popThis() {
+    this.navCtrl.pop();
+  }
 
   
   
