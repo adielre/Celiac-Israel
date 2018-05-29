@@ -19,7 +19,7 @@ export class HomePage {
   }
 
   openPlaceList() {
-    this.firebase.queryFirestore().fromCollection('resturant').field('location').equals(this.searchString.value).runQuery()
+    this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
           alert('NO RESTURANT IN THIS LOCATION!')
