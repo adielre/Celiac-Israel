@@ -1,0 +1,175 @@
+<div class="container">
+  <h1 class="row">הוספת או עריכת מקום</h1>
+  <div class="row">
+    <div class="labels col-2" >
+      שם המקום:
+    </div>
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="הכנס שם מקום.."  [(ngModel)]="namePlace" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="labels col-2">
+      כתובת:
+    </div>
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="הכנס כתובת..." [(ngModel)]="Address" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="labels col-2">
+      טלפון:
+    </div>
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="הכנס מס' טלפון..."  [(ngModel)]="phone">
+    </div>
+  </div>
+
+  
+
+
+  <div class="row">  
+    <div class="labels col-2">
+      כתובת אתר אינטרנט:
+    </div>
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="הכנס כתובת אתר אנטרנט..." [(ngModel)]="linksUrl.website">
+    </div>
+  </div>
+ 
+
+  <div class="row">
+      <div class="labels col-2">
+          כתובת תמונת מקום:
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control" placeholder="הכנס כתובת אתר תמונה..." [(ngModel)]="linksUrl.logo">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="labels col-2">
+          כתובת פייסבוק:
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control" placeholder="הכנס כתובת פייסבוק..." [(ngModel)]="linksUrl.facebook">
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="labels col-2">
+      כתובת אימל:
+    </div>
+    <div class="col-10">
+      <input type="text" class="form-control" placeholder="הכנס כתובת אימייל..." [(ngModel)]="email">
+    </div>
+  </div>
+
+  <div class="row">
+      <div class="labels col-2">
+        שעות פתיחה:
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control" placeholder="הכנס  שעות פתיחת מקום..." [(ngModel)]="opening">
+      </div>
+    </div>
+
+
+      
+  <div class="row">
+      <div class="labels col-2">
+        טווח מחירים:
+      </div>
+      <div class="col-10">
+        <input type="text" class="form-control" placeholder="הכנס טווח  מחירים..." [(ngModel)]="priceRange">
+      </div>
+    </div>
+ 
+    
+    <div class="row">
+        <div class="labels col-2">
+          סוג מזון:
+        </div>
+        <div class="col-10">
+          <input type="text" class="form-control" placeholder="הכנס סוג מזון רצוי.."  [(ngModel)]="typeDishes">
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="labels col-2">
+            תיאור חופשי:
+          </div>
+          <div class="col-10">
+            <input type="text" class="form-control" placeholder="הכנס תיאור חופשי..." [(ngModel)]="Description">
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="labels col-2">
+              מידע נוסף:
+            </div>
+            <div class="col-10">
+              <input type="text" class="form-control" placeholder="..."  [(ngModel)]="moreInfo">
+            </div>
+          </div>
+          
+          <div class="row">
+              <div class="labels col-2">
+                העדפות נוספות
+              </div>
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="הכנס העדפות נוספות שהמקום מתחשב בו"  [(ngModel)]="sensitivePreferences.preferences">
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="labels col-2">
+                  רגישויות נוספות
+                </div>
+                <div class="col-10">
+                  <input type="text" class="form-control" placeholder="הכנס רגישויות נוספות שהמקום מתחשב בו"  [(ngModel)]="sensitivePreferences.sensitivity">
+                </div>
+              </div>
+
+<div class="row">
+  <div class="labels col-2">
+      מתקנים 
+  </div>
+  <div class="col-10">
+     <input type="text" class="form-control" placeholder="הכנס מתקנים שהמקום מציע"  [(ngModel)]="facilities">
+  </div>
+</div>
+            
+          
+  <div class="form-group row">
+    <div style='align-self:center;text-align:right;' class='col'>
+      <input type="checkbox" class="form-check-input" name='acceptedEula' required ngModel  [(ngModel)]="sensitivePreferences.gfMenu">
+      <label style="margin-right:20px;" class="form-check-label">תפריט ללא גלוטן</label>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-group row">
+    <div style='align-self:center;text-align:right;' class='col'>
+      <input type="checkbox" class="form-check-input" name='acceptedEula' required ngModel [(ngModel)]="sensitivePreferences.kosher">
+      <label style="margin-right:20px;" class="form-check-label">כשר</label>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div style='align-self:center;text-align:right;' class='col'>
+      <input type="checkbox" class="form-check-input" name='acceptedEula' required ngModel [(ngModel)]="sensitivePreferences.accessibility">
+      <label style="margin-right:20px;" class="form-check-label">נגישות</label>
+    </div>
+  </div> 
+
+
+
+<div class="col-12 text-center"> 
+    <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/main-screen">Save</button> 
+</div>
