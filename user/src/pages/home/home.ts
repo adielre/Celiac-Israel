@@ -19,6 +19,8 @@ export class HomePage {
   }
 
   openPlaceList() {
+
+
     this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
@@ -70,7 +72,8 @@ export class HomePage {
 
   }
 
-  presentAlert() {
+  presentAlert() 
+  {
     let alert = this.alertCtrl.create({
 
       title: 'שגיאה',
