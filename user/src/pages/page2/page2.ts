@@ -26,7 +26,7 @@ export class Page2Page {
   }
   goToSite(param){
     //console.log(param)
-   window.open(param.site_url,'_self'); // self how to open the site 
+   window.open(param.links.website,'_self'); // self how to open the site 
   }
 
   popThis() {
