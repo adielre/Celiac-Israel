@@ -22,6 +22,7 @@ import { routing } from './app.rout';
 //import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MainScreenComponent } from './main-screen/main-screen.component';
+import { FirebaseService } from './firebase-service/firebase.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { MainScreenComponent } from './main-screen/main-screen.component';
 
   ],
  
-  providers: [AuthService],//maybe also:  providers: [],
+  providers: [FirebaseService, AuthService],//maybe also:  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
