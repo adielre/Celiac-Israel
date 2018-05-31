@@ -1,7 +1,28 @@
-
-<div class="col-12 text-center"> 
-    <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/edit-screen">הוסף מסעדה</button> 
+<div class="col-12 text-center">
+    <button type="button" class="btn btn-outline-primary btn-primary" (click)="save()" routerLink="/edit-screen">הוסף מסעדה</button>
 </div>
-<div class="col-12 text-center"> 
-    <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/login">צא מהמערכת</button> 
+<div class="col-12 text-center">
+    <button type="button" class="btn btn-outline-primary btn-primary" (click)="save()" routerLink="/login">צא מהמערכת</button>
+</div>
+
+<div class="container">
+
+    <mat-accordion *ngFor='let rest of restaurants'>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{rest.name}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{rest.openingTime}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class='content'>
+                {{rest.priceRange}}
+                {{rest.description}}
+                {{rest.facilities}}
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+
 </div>

@@ -12,7 +12,8 @@
   <ion-grid *ngFor='let res of result'>
     <ion-row>
       <ion-col col-2 >
-       <img src={{res.links.logo}} (touchend)= "goToSite(res)"   >
+       <!-- <img src={{res.links.logo}} (touchend)= "goToSite(res)"   > -->
+       <img src={{res.links.logo}}>
       </ion-col>
       <ion-col col-3 >
         {{res.namePlace}}

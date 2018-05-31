@@ -75,7 +75,6 @@ export class HomePage {
   presentAlert() 
   {
     let alert = this.alertCtrl.create({
-
       title: 'שגיאה',
       subTitle: 'אתה חייב להכניס מיקום',
       cssClass: 'rtlAlert',

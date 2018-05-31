@@ -19,10 +19,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
 import { routing } from './app.rout';
-//import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
 import { MainScreenComponent } from './main-screen/main-screen.component';
 import { FirebaseService } from './firebase-service/firebase.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -37,12 +38,16 @@ import { FirebaseService } from './firebase-service/firebase.service';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule, 
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routing)
 
   ],
  
-  providers: [FirebaseService, AuthService],//maybe also:  providers: [],
+  providers: [AuthService],//maybe also:  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

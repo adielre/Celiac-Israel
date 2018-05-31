@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { FirebaseService } from '../firebase-service/firebase.service';
 
 @Component({
   selector: 'app-add-edit-screen',
@@ -46,8 +47,6 @@ export class AddEditScreenComponent implements OnInit {
 
   public save(){
     let obj = {
-     
-     
       namePlace: this.namePlace,
       Address:this.Address,
       phone: this.phone,
@@ -59,8 +58,7 @@ export class AddEditScreenComponent implements OnInit {
       
      sensitivePreferences:  this.sensitivePreferences,
       links:  this.linksUrl,
-
-       priceRange: this.priceRange,      
+      priceRange: this.priceRange,      
       facilities: this.facilities,
       moreInfo: this.moreInfo
 
