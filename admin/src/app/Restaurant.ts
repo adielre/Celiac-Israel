@@ -19,7 +19,8 @@ export class Restaurant {
     accessibility: boolean
 
     constructor(restObj) {
-        this.name = restObj['name']
+        this.name = restObj['namePlace']
+        this.phone= restObj ['phone']
         this.address = restObj['Address']
         this.openingTime = restObj['opening']
         this.description = restObj['Description']
