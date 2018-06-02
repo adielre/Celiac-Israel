@@ -38,9 +38,10 @@ export class HomePage {
         } else {
           //alert(this.result)
           this.navCtrl.push(Page2Page, { result: res });
+          this.loadPage2=0;
         }
       }.bind(this))
-
+     
   }
 
 
