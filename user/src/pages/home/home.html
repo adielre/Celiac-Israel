@@ -30,9 +30,10 @@
         </ion-select>
       </ion-item>-->
    </form>
-   <ion-spinner name="dots" *ngIf = "loadPage2 == 1"></ion-spinner>
-  <button ion-button  type="submits" style="margin-right: 25%; width: 50%; margin-top: 4%;" round (click)="openPlaceList()">חפש</button>  
- 
+ <div>
+    <button ion-button  type="submits" style="margin-right: 25%; width: 50%; margin-top: 4%;" round (click)="openPlaceList()">חפש</button>  
+    <ion-spinner name="dots" *ngIf = "loadPage2 == 1"></ion-spinner>
+  </div>
   <!--<button (click)='tryMe()'>Click</button>-->
   
 </ion-content>
