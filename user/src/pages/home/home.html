@@ -10,13 +10,19 @@
   </div>
   <h3 id="title" style="color:#36355E;font-weight:600;text-align:center;">הכנס מיקום:</h3>
   
+  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
   
    <!-- <input id = "inputBox" [(ngModel)]="location" >-->
   <!-- <ion-input id = "inputBox"  placeholder="זה הישן" [(ngModel)]="location" #searchBox ></ion-input> <br/>-->
-   <form [formGroup]="myForm">
-        
-      <ion-input id = "inputBox"  placeholder="הכנס מיקום"  formControlName="myLocation" type="text"  #searchBox></ion-input>
-   <!--  <ion-item>
+   <form [formGroup]="locationForm">
+      
+         <ion-input id = "inputBox"  placeholder="הכנס מיקום"  formControlName="myLocation" type="text"  #searchBox></ion-input>
+      
+      <ion-item *ngIf="!locationForm.controls.myLocation.valid  && (locationForm.controls.myLocation.dirty || submitAttempt)">
+          <p id="fixText">הכנס אותיות בעברית בלבד</p>
+      </ion-item>
+      <!--  <ion-item>
         <ion-label floating>מיקום מתוך רשימה</ion-label>
         <ion-select formControlName="locationByList">
             <ion-option value="jerusalem" checked="true">ירושלים</ion-option>
