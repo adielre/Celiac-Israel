@@ -15,7 +15,7 @@ export class HomePage {
   @Input() myLocation: string
 
     locationForm: FormGroup;
-    submitAttempt: boolean = false;
+    //submitAttempt: boolean = false;
 
     constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService, public formBuilder: FormBuilder) {
       //validation:
