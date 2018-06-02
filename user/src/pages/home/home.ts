@@ -15,13 +15,11 @@ export class HomePage {
   @Input() myLocation: string
 
     locationForm: FormGroup;
-    //submitAttempt: boolean = false;
+    loadPage2: any =0;
 
     constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService, public formBuilder: FormBuilder) {
-      //validation:
       this.locationForm = formBuilder.group({
          myLocation: ['', Validators.compose([Validators.pattern('[א-ת ]*'), Validators.required])],
-        // locationByList: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       });
   }
 
@@ -30,10 +28,13 @@ export class HomePage {
     if(!this.locationForm.valid)//incorect valid
       return;
    
+      this.loadPage2=1;
+
     this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
-          alert('NO RESTURANT IN THIS LOCATION!')
+          alert('NO RESTURANT IN THIS LOCATION!');
+          this.loadPage2=0;
         } else {
           //alert(this.result)
           this.navCtrl.push(Page2Page, { result: res });
@@ -56,7 +57,7 @@ export class HomePage {
     }
   }
 
-  tryMe() {
+ /* tryMe() {
     console.log('Clicked')
     window['firebase'].firestore().collection("resturant").add(
       {
@@ -75,7 +76,7 @@ export class HomePage {
 
   createNewUser(email: string, password: string) {
     window['firebase'].auth().createUserWithEmailAndPassword(email, password)
-  }
+  }*/
 
   getRes(myLocation: string) {
 
@@ -83,6 +84,7 @@ export class HomePage {
 
   presentAlert() 
   {
+    
     let alert = this.alertCtrl.create({
       title: 'שגיאה',
       subTitle: 'אתה חייב להכניס מיקום',
@@ -90,6 +92,7 @@ export class HomePage {
       buttons: ['אשר']
     });
     alert.present();
+    
   }
 
 

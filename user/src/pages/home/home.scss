@@ -27,7 +27,11 @@ page-home {
         color: #ea6153;
         text-align: center;
     }
-    
+    ion-spinner{
+        width: 16px !important;
+        height: 16px !important;
+      
+    }
 }
 .rtlAlert {
     direction: rtl;
