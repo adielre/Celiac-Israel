@@ -18,6 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FirebaseService } from './firebase-service/firebase.service';
 
+//validation
+//import { Validators } from '@angular/forms';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -51,6 +54,7 @@ import { FirebaseService } from './firebase-service/firebase.service';
     FirebaseService,
     StatusBar,
     SplashScreen,
+  //  Validators,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -2,8 +2,7 @@ import { Component, Input,ViewChild } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Page2Page } from '../page2/page2';
 import { FirebaseService } from '../../app/firebase-service/firebase.service';
-
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
@@ -13,9 +12,16 @@ export class HomePage {
 
   
   @ViewChild('searchBox') searchString
-  @Input() location: string
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService) {
-    
+  @Input() myLocation: string
+
+     myForm: FormGroup;
+
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService, public formBuilder: FormBuilder) {
+      //validation:
+      this.myForm = formBuilder.group({
+         myLocation: ['', Validators.compose([Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        // locationByList: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      });
   }
 
   openPlaceList() {
@@ -35,13 +41,13 @@ export class HomePage {
 
 
   onLoadPlaces() {
-    if (this.location == undefined) {
+    if (this.myLocation == undefined) {
       this.presentAlert();
       //console.log("hello");
     }
     else {
 
-      this.location = undefined;
+      this.myLocation = undefined;
       this.navCtrl.push(Page2Page);
       //console.log("world");
     }
@@ -68,7 +74,7 @@ export class HomePage {
     window['firebase'].auth().createUserWithEmailAndPassword(email, password)
   }
 
-  getRes(location: string) {
+  getRes(myLocation: string) {
 
   }
 
@@ -82,4 +88,9 @@ export class HomePage {
     });
     alert.present();
   }
+
+
+
+
+
 }

@@ -12,7 +12,19 @@
   
   
    <!-- <input id = "inputBox" [(ngModel)]="location" >-->
-   <ion-input id = "inputBox"  placeholder="הכנס מיקום" [(ngModel)]="location" #searchBox ></ion-input>
+  <!-- <ion-input id = "inputBox"  placeholder="זה הישן" [(ngModel)]="location" #searchBox ></ion-input> <br/>-->
+   <form [formGroup]="myForm">
+        
+      <ion-input id = "inputBox"  placeholder="הכנס מיקום"  formControlName="myLocation" type="text"  #searchBox></ion-input>
+   <!--  <ion-item>
+        <ion-label floating>מיקום מתוך רשימה</ion-label>
+        <ion-select formControlName="locationByList">
+            <ion-option value="jerusalem" checked="true">ירושלים</ion-option>
+            <ion-option value="tlv">תל אביב</ion-option>
+            <ion-option value="t" *ngFor='let rest of restaurants'>{{rest.Address}}</ion-option>
+        </ion-select>
+      </ion-item>-->
+   </form>
 
   <button ion-button  type="submits" style="margin-right: 25%; width: 50%; margin-top: 4%;" round (click)="openPlaceList()">חפש</button>  
  
