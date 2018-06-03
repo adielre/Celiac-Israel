@@ -14,15 +14,54 @@
                     {{rest.name}}
                 </mat-panel-title>
                 <mat-panel-description>
-                    {{rest.openingTime}} 
+                    {{rest.description}}
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <div class='content'>
-                {{rest.phone}}
+                <mat-list>
+                   
+                    <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>טלפון: {{rest.phone}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>שעות פתיחה: {{rest.openingTime}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>טווח מחירים: {{rest.priceRange}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>סוג מזון: {{rest.foodType}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>מידע נוסף: {{rest.moreInformation}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item> מעבר לאתר האינטרנט
+                        <pre> </pre>
+                        <a href="{{rest.website}}"> לחץ כאן </a>
+                    </mat-list-item>
+                    <mat-divider> </mat-divider>
+                    <mat-list-item>מעבר לפייסבוק
+                        <pre> </pre>
+                        <a href="{{rest.facebook}}">לחץ כאן</a>
+                    </mat-list-item>
+
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+
+                    </mat-list-item>
+                </mat-list>
+
+
+                <!-- טלפון: {{rest.phone}}
+           
                 {{rest.priceRange}}
-                {{rest.description}}
-                {{rest.facilities}}
+                {{rest.openingTime}} 
+                {{rest.facilities}} -->
             </div>
+
         </mat-expansion-panel>
     </mat-accordion>
 

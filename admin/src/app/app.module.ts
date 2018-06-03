@@ -24,7 +24,7 @@ import { FirebaseService } from './firebase-service/firebase.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
-
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +41,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routing)
