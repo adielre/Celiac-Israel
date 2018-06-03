@@ -22,13 +22,13 @@
                    
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>טלפון: {{rest.phone}} </mat-list-item>
+                    <mat-list-item>טלפון: {{rest.phone}}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>אימל: {{rest.email}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>שעות פתיחה: {{rest.openingTime}} </mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>טווח מחירים: {{rest.priceRange}} </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-divider></mat-divider>
                     <mat-divider></mat-divider>
                     <mat-list-item>סוג מזון: {{rest.foodType}} </mat-list-item>
                     <mat-divider></mat-divider>
@@ -37,6 +37,8 @@
                     <mat-list-item>העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>מתקנים:{{rest.facilities}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item> מעבר לאתר האינטרנט
                         <pre> </pre>
@@ -47,19 +49,21 @@
                         <pre> </pre>
                         <a href="{{rest.facebook}}">לחץ כאן</a>
                     </mat-list-item>
-
                     <mat-divider></mat-divider>
-                    <mat-list-item>
+                    <mat-list-item>כשר: {{rest.kosher}}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>נגישות: {{rest.accessibility}}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>תפריט ללא גלוטן: {{ rest.gfMenu}}</mat-list-item>
+                    
 
-                    </mat-list-item>
+                    
+                
+                
                 </mat-list>
 
 
-                <!-- טלפון: {{rest.phone}}
-           
-                {{rest.priceRange}}
-                {{rest.openingTime}} 
-                {{rest.facilities}} -->
+                
             </div>
 
         </mat-expansion-panel>
