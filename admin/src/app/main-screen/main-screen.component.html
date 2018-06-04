@@ -5,11 +5,15 @@
     <button type="button" class="btn btn-outline-primary btn-primary" (click)="save()" routerLink="/login">צא מהמערכת</button>
 </div>
 
+
 <div class="container">
 
     <mat-accordion *ngFor='let rest of restaurants'>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
+                        <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> 
+                            <i class="fas fa-pencil-alt"></i>  
+                        </button>
                 <mat-panel-title>
                     {{rest.name}}
                 </mat-panel-title>
@@ -17,6 +21,7 @@
                     {{rest.description}}
                 </mat-panel-description>
             </mat-expansion-panel-header>
+             
             <div class='content'>
                 <mat-list>
                    

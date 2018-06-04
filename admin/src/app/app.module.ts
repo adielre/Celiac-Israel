@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component'
 
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+//import {MatIconModule} from '@angular/material/icon';
 
 
 //login import:
@@ -44,6 +45,7 @@ import {MatListModule} from '@angular/material/list';
     MatListModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    //MatIconModule,
     RouterModule.forRoot(routing)
 
   ],
