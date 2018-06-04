@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Page2Page } from '../pages/page2/page2';
+import { DetailsPage } from '../pages/details/details';
 import { FilterPage } from '../pages/filter/filter';
 import { FormsModule } from '@angular/forms';
 
@@ -30,6 +31,7 @@ import { FirebaseService } from './firebase-service/firebase.service';
     TabsPage,
     Page2Page,
     FilterPage,
+    DetailsPage,
     //FirebaseService,
     
   ],
@@ -48,6 +50,7 @@ import { FirebaseService } from './firebase-service/firebase.service';
     HomePage,
     TabsPage,
     Page2Page,
+    DetailsPage,
     FilterPage
   ],
   providers: [

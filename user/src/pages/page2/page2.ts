@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FilterPage } from '../filter/filter';
-
+import { DetailsPage } from '../details/details';
 /**
  * Generated class for the Page2Page page.
  *
@@ -44,6 +44,10 @@ export class Page2Page {
      if( this.result==null){
        alert("STOP")
      }
+}
+
+move(){
+  this.navCtrl.push(DetailsPage, /*{ result: res }*/);
 }
   
   
