@@ -14,12 +14,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'details.html',
 })
 export class DetailsPage {
-
+  res: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
+
+    this.res = this.navParams.get('result');
+     if( this.res==null){
+       alert("STOP")
+     }
+     console.log('eee');
+     console.log(this.res);
   }
 
 }

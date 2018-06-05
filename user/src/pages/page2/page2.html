@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col col-2 >
        <!-- <img src={{res.links.logo}} (touchend)= "goToSite(res)"   > -->
-       <img src={{res.links.logo}}>
+       <img (click)="move(res)" src={{res.links.logo}}>
       </ion-col>
       <ion-col col-3 >
         {{res.namePlace}}
@@ -33,5 +33,5 @@
   </ion-grid>  
 
     <button ion-button outline (click)="popThis()">חזור אחורה</button>
-    <button ion-button outline (click)="move()">הצג פרטים</button>
+    <p>לחץ על תמונה כדי להציג את הפרטים שלה</p>
 </ion-content>
