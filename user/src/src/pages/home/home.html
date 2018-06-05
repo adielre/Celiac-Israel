@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title >עמוד הבית</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="assets/imgs/logoApp.png" style="display: block; height: auto; margin-left: auto; margin-right: auto;">
+  </div>
+  <h3 id="title" style="color:#36355E;font-weight:600;text-align:center;">הכנס מיקום:</h3>
+  
+  
+  
+   <!-- <input id = "inputBox" [(ngModel)]="location" >-->
+  <!-- <ion-input id = "inputBox"  placeholder="זה הישן" [(ngModel)]="location" #searchBox ></ion-input> <br/>-->
+   <form [formGroup]="locationForm">
+      
+         <ion-input id = "inputBox"  placeholder="הכנס מיקום"  formControlName="myLocation" type="text"  #searchBox></ion-input>
+      
+      <ion-item *ngIf="!locationForm.controls.myLocation.valid  && (locationForm.controls.myLocation.dirty )">
+          <p id="fixText">הכנס אותיות בעברית בלבד</p>
+      </ion-item>
+      <!--  <ion-item>
+        <ion-label floating>מיקום מתוך רשימה</ion-label>
+        <ion-select formControlName="locationByList">
+            <ion-option value="jerusalem" checked="true">ירושלים</ion-option>
+            <ion-option value="tlv">תל אביב</ion-option>
+            <ion-option value="t" *ngFor='let rest of restaurants'>{{rest.Address}}</ion-option>
+        </ion-select>
+      </ion-item>-->
+   </form>
+ <div>
+    <button ion-button  type="submits" style="margin-right: 25%; width: 50%; margin-top: 4%;" round (click)="openPlaceList()">חפש</button>  
+    <ion-spinner name="dots" *ngIf = "loadPage2 == 1"></ion-spinner>
+  </div>
+  <!--<button (click)='tryMe()'>Click</button>-->
+  
+</ion-content>
+
+
+
