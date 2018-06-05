@@ -1,0 +1,9 @@
+
+<div mat-dialog-content>
+  <p>האם אתה בטוח שברצונך למחוק מסעדה זו?</p>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">כן</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>לא</button>
+</div>
