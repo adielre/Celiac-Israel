@@ -12,7 +12,7 @@ import { AddEditScreenComponent } from './add-edit-screen/add-edit-screen.compon
 import { LoginComponent } from './login/login.component'
 
 //popup messege when deleting restaurant
-import {MatDialogModule} from '@angular/material/dialog';
+
 
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -55,10 +55,7 @@ import {MatListModule} from '@angular/material/list';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatDialogModule,
-<<<<<<< HEAD
-=======
     //MatIconModule,
->>>>>>> c7c37c95b0d08d40700741d5b2b5fd3c6f08bcfa
     RouterModule.forRoot(routing)
 
   ],
