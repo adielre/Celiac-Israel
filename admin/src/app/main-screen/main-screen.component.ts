@@ -24,6 +24,10 @@ export class MainScreenComponent implements OnInit {
         err => { console.log(err) }
       )
   }
-
+  
+  // deleteResturant(event,resturant)
+  // {
+  //   this.resturantService.deleteResturant(resturant);
+  // }
 }
 

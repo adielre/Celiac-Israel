@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component'
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+
 
 
 //login import:
@@ -26,6 +28,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatListModule} from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,7 @@ import {MatListModule} from '@angular/material/list';
     MatListModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    //MatIconModule,
+    MatDialogModule,
     RouterModule.forRoot(routing)
 
   ],

@@ -11,8 +11,11 @@
     <mat-accordion *ngFor='let rest of restaurants'>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
+                
 
-                    <button class="btn btn-outline-primary btn-primary" id="trash"><i class="fa fa-trash"></i></button>     
+                    <button class="btn btn-outline-primary btn-primary" id="trash" (click)="open()"> 
+                        <i class="fa fa-trash"></i>
+                    </button>     
                         <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> 
                             <i class="fas fa-pencil-alt"></i>  
                         </button>
