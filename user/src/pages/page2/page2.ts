@@ -35,8 +35,6 @@ export class Page2Page {
 
 
   ionViewDidLoad() {
-    
-    // let str: string;
      
      console.log('ionViewDidLoad PlacelistPage');
  
@@ -44,10 +42,15 @@ export class Page2Page {
      if( this.result==null){
        alert("STOP")
      }
-}
+  }
 
-move(){
-  this.navCtrl.push(DetailsPage, /*{ result: res }*/);
+/**
+ * this fun move to DetailsPage 
+ * @param res the resturant that the user click on it
+ */
+move(res){
+  console.log(res.namePlace);
+  this.navCtrl.push(DetailsPage, { result: res });
 }
   
   
