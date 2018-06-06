@@ -26,13 +26,11 @@ export class MainScreenComponent implements OnInit {
         err => { console.log(err) }
       )
   }
-<<<<<<< HEAD
   
   // deleteResturant(event,resturant)
   // {
   //   this.resturantService.deleteResturant(resturant);
   // }
-=======
   openDialog(): void {
     let dialogRef = this.dialog.open(MainScreenPopupComponent, {
       width: '250px',
@@ -43,7 +41,6 @@ export class MainScreenComponent implements OnInit {
     });
 
   }  
->>>>>>> c7c37c95b0d08d40700741d5b2b5fd3c6f08bcfa
 }
   @Component({
     selector: 'main-screen-popup',
