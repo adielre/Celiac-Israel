@@ -33,7 +33,7 @@ export class HomePage {
     this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
-          alert('NO RESTURANT IN THIS LOCATION!');
+          alert('אין מסעדות במיקום זה');
           this.loadPage2=0;
         } else {
           //alert(this.result)
