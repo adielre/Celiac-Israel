@@ -19,6 +19,7 @@ export class Restaurant {
     kosher: boolean
     accessibility: boolean
     gfMenu: boolean
+    TypeOfBusiness : string
 
     constructor(restObj) {
         this.name = restObj['namePlace']
@@ -38,6 +39,7 @@ export class Restaurant {
         this.kosher =restObj['sensitivePreferences']['kosher']
         this.accessibility=restObj['sensitivePreferences']['accessibility']
         this.gfMenu=restObj['sensitivePreferences']['gfMenu']
+        this.TypeOfBusiness=restObj['TypeOfBusiness']
         
     }
 

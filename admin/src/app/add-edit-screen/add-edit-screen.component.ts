@@ -42,6 +42,9 @@ export class AddEditScreenComponent implements OnInit {
   
   facilities: string;
   moreInfo: string;
+  TypeOfBusiness : string;
+  
+  
 
 
 
@@ -54,6 +57,7 @@ export class AddEditScreenComponent implements OnInit {
       opening: this.opening,
       Description:this.Description,
       restauranttype: this.restauranttype,
+      TypeOfBusiness:this.TypeOfBusiness,
 
       
      sensitivePreferences:  this.sensitivePreferences,
