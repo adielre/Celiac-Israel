@@ -26,6 +26,7 @@ export class MainScreenComponent implements OnInit {
         err => { console.log(err) }
       )
   }
+  //this function opens the popup messege
   openDialog(): void {
     let dialogRef = this.dialog.open(MainScreenPopupComponent, {
       width: '250px',

@@ -12,7 +12,10 @@
     color:white;
     
 }*/
+.button-row{
+    display: inline;
 
+}
 .container{
     margin-top: 30px;
 }
