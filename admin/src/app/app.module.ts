@@ -12,11 +12,13 @@ import { AddEditScreenComponent } from './add-edit-screen/add-edit-screen.compon
 import { LoginComponent } from './login/login.component'
 
 //popup messege when deleting restaurant
-import {MatDialogModule} from '@angular/material/dialog';
+
 
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+
 
 
 //login import:

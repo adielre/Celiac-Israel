@@ -10,7 +10,7 @@ export class Restaurant {
     email: string
     openingTime: string
     priceRange: string
-    foodType: string
+    restauranttype: string
     description: string
     moreInformation: string
     additionalPreferences: string
@@ -19,6 +19,7 @@ export class Restaurant {
     kosher: boolean
     accessibility: boolean
     gfMenu: boolean
+    TypeOfBusiness : string
 
     constructor(restObj) {
         this.name = restObj['namePlace']
@@ -30,7 +31,7 @@ export class Restaurant {
         this.openingTime = restObj['opening']
         this.description = restObj['Description']
         this.priceRange = restObj['priceRange']
-        this.foodType=restObj['typeDishes']
+        this.restauranttype = restObj['restauranttype']
         this.moreInformation=restObj['moreInfo']
         this.additionalPreferences=restObj['sensitivePreferences']['preferences']
         this.sensitivePreferences=restObj['sensitivePreferences']['preferences']
@@ -38,6 +39,7 @@ export class Restaurant {
         this.kosher =restObj['sensitivePreferences']['kosher']
         this.accessibility=restObj['sensitivePreferences']['accessibility']
         this.gfMenu=restObj['sensitivePreferences']['gfMenu']
+        this.TypeOfBusiness=restObj['TypeOfBusiness']
         
     }
 

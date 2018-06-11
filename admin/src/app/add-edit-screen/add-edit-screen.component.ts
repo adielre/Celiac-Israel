@@ -20,7 +20,7 @@ export class AddEditScreenComponent implements OnInit {
   phone: string;
   email: string;
 
-  typeDishes: string;
+  restauranttype: string;
   Description: string;
   opening: string;
  
@@ -42,6 +42,9 @@ export class AddEditScreenComponent implements OnInit {
   
   facilities: string;
   moreInfo: string;
+  TypeOfBusiness : string;
+  
+  
 
 
 
@@ -53,7 +56,8 @@ export class AddEditScreenComponent implements OnInit {
       email: this.email,
       opening: this.opening,
       Description:this.Description,
-      typeDishes: this.typeDishes,
+      restauranttype: this.restauranttype,
+      TypeOfBusiness:this.TypeOfBusiness,
 
       
      sensitivePreferences:  this.sensitivePreferences,

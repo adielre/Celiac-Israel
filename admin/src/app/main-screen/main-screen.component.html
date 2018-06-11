@@ -15,7 +15,9 @@
     <mat-accordion *ngFor='let rest of restaurants'>
         <mat-expansion-panel>
             <mat-expansion-panel-header>
+                
 
+                    
                     <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash"><i class="fa fa-trash"></i></button>
                    
                         <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> <i class="fas fa-pencil-alt"></i>  </button>
@@ -40,7 +42,9 @@
                     <mat-divider></mat-divider>
                     <mat-list-item>טווח מחירים: {{rest.priceRange}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>סוג מזון: {{rest.foodType}} </mat-list-item>
+                    <mat-list-item>סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>מידע נוסף: {{rest.moreInformation}} </mat-list-item>
                     <mat-divider></mat-divider>
