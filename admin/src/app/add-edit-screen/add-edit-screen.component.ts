@@ -15,8 +15,8 @@ export class AddEditScreenComponent implements OnInit {
   } 
 
 
-  namePlace: string='';
-  Address: string='';
+  namePlace: string;
+  Address: string;
   phone: string='';
   email: string='';
   restauranttype: string='';
