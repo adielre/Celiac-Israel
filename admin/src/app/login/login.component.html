@@ -1,6 +1,14 @@
-<h1 *ngIf="authService.user | async">
+<div *ngIf="authService.user | async">
+<h4>Welcome {{ (authService.user | async)?.email }}!</h4>
+  <div class="col-12 text-center">
+    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">עבור למסך הבית</button>
+  </div>
+  <div class="col-12 text-center"> 
+    <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" *ngIf="authService.user | async">Logout</button>
+  </div>
+</div>
 
-  Welcome {{ (authService.user | async)?.email }}!</h1>
+
 <img id="logo" src="assets\logo.png">
 <div *ngIf="!(authService.user | async)">
   <input type="text" [(ngModel)]="email" placeholder="email">
@@ -8,9 +16,6 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <button type="button" class="btn btn-outline-primary btn-primary" (click)="signup()" [disabled]="!email || !password">
-          Signup
-        </button>
 
         <button type="button" class="btn btn-outline-primary btn-primary" (click)="login()" routerLink="/main-screen" [disabled]="!email || !password">
           Login
@@ -22,13 +27,10 @@
 
 </div>
 
-<div class="col-12 text-center"> 
-  <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" *ngIf="authService.user | async">
-  Logout
 
-</button>
 
-</div>
+
+
 
 
 
