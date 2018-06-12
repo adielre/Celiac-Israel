@@ -26,14 +26,25 @@ export class HomePage {
   openPlaceList() {
 
     if(!this.locationForm.valid)//incorect valid
+    {
+      this.presentAlert();
       return;
+    }
+      
+
+      /*alert("a");
+      if (this.searchString.value == undefined) {
+        alert("b");
+        this.presentAlert();
+      }  
+      alert("c");*/
    
-      this.loadPage2=1;
+    this.loadPage2=1;
 
     this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
-          alert('אין מסעדות במיקום זה');
+          this.presentAlert2();
           this.loadPage2=0;
         } else {
           //alert(this.result)
@@ -84,8 +95,7 @@ export class HomePage {
   }
 
   presentAlert() 
-  {
-    
+  { 
     let alert = this.alertCtrl.create({
       title: 'שגיאה',
       subTitle: 'אתה חייב להכניס מיקום',
@@ -93,7 +103,17 @@ export class HomePage {
       buttons: ['אשר']
     });
     alert.present();
-    
+  }
+
+  presentAlert2() 
+  { 
+    let alert = this.alertCtrl.create({
+      title: 'שגיאה',
+      subTitle: 'לא קיימות מסעדות במאגר, נסה מיקום אחר',
+      cssClass: 'rtlAlert',
+      buttons: ['אשר']
+    });
+    alert.present();
   }
 
 
