@@ -18,6 +18,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!', value);
+
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
@@ -48,6 +49,8 @@ export class AuthService {
  *  this method return true in case the user is logged in, and false otherwise
  */
   isLoggedIn(){
+    console.log("this.userLoggin");
+    console.log(this.userLoggin);
     if (this.userLoggin == false)
       return false;
     else

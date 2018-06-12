@@ -1,3 +1,16 @@
-<p>
-  add-admin works!
-</p>
+<div class="col text-center">
+
+  <h1 >הוספת משתמש </h1>
+  <div><input type="text" [(ngModel)]="email" placeholder="email"></div>
+
+  <div><input type="password" [(ngModel)]="password" placeholder="password"></div>
+  
+  <div class="col-12 text-center">
+    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="signup()" routerLink="/main-screen">הוספת משתמש</button>
+  </div>
+  <div class="col-12 text-center">
+      <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
+  </div>
+
+</div>
+

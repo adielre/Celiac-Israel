@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '..//servises/auth.service';
 
 @Component({
   selector: 'app-add-admin',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
+  email: string;
+  password: string;
+  constructor(public authService: AuthService) { }
 
-  constructor() { }
-
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
+  }
   ngOnInit() {
   }
 
