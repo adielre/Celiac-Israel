@@ -20,7 +20,7 @@
 
         <div class="col">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">סינון לפי מיקום:</label>
+                <label>סינון לפי מיקום:</label>
                 <select class="form-control" (change)='setLocationFilter($event)'>
                     <option *ngFor='let location of locations' value='{{location.value}}'>{{location.name}}</option>
                 </select>
@@ -29,7 +29,7 @@
 
         <div class="col">
             <div class="form-group">
-                <label for="exampleFormControlSelect1">סינון לפי סוג עסק:</label>
+                <label>סינון לפי סוג עסק:</label>
                 <select class="form-control" (change)='setTypeFilter($event)'>
                         <option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</option>
                 </select>
