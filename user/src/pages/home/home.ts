@@ -48,36 +48,17 @@ export class HomePage {
   onLoadPlaces() {
     if (this.myLocation == undefined) {
       this.presentAlert();
-      //console.log("hello");
+      
     }
     else {
 
       this.myLocation = undefined;
       this.navCtrl.push(Page2Page);
-      //console.log("world");
+     
     }
   }
 
- /* tryMe() {
-    console.log('Clicked')
-    window['firebase'].firestore().collection("resturant").add(
-      {
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
-      }
-    )
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-  }
 
-  createNewUser(email: string, password: string) {
-    window['firebase'].auth().createUserWithEmailAndPassword(email, password)
-  }*/
 
   getRes(myLocation: string) {
 
