@@ -1,27 +1,55 @@
-
-
 <div class="button-row">
     <div class="col-12 text-center">
-        <button mat-fab type="button" class="btn btn-outline-primary btn-primary"  routerLink="/edit-screen">הוסף מסעדה</button>
+        <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/edit-screen">הוסף מסעדה</button>
     </div>
     <div class="col-12 text-center">
-        <button mat-fab type="button" class="btn btn-outline-primary btn-primary"  routerLink="/login">צא מהמערכת</button>
+        <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/login">צא מהמערכת</button>
     </div>
     <div class="col-12 text-center">
         <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/add-admin">הוסף משתמש</button>
     </div>
 </div>
 
+<div class="container">
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">סינון לפי מיקום:</label>
+                <select class="form-control" (change)='setLocationFilter($event)'>
+                    <option *ngFor='let location of locations' value='{{location.value}}'>{{location.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">סינון לפי סוג עסק:</label>
+                <select class="form-control" (change)='setTypeFilter($event)'>
+                        <option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 
 <div class="container">
 
     <mat-accordion *ngFor='let rest of restaurants'>
-        <mat-expansion-panel>
+        <mat-expansion-panel *ngIf='rest.showOnScreen'>
             <mat-expansion-panel-header>
-                
-                    <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash"><i class="fa fa-trash"></i></button>
-                   
-                    <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> <i class="fas fa-pencil-alt"></i>  </button>
+
+                <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash">
+                    <i class="fa fa-trash"></i>
+                </button>
+
+                <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
 
                 <mat-panel-title>
                     {{rest.name}}
@@ -29,7 +57,7 @@
                 <mat-panel-description>
                     {{rest.description}}
                 </mat-panel-description>
-            </mat-expansion-panel-header>             
+            </mat-expansion-panel-header>
             <div class='content'>
                 <mat-list>
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
@@ -59,7 +87,7 @@
                         <a href="{{rest.website}}"> לחץ כאן </a>
                     </mat-list-item>
                     <mat-divider> </mat-divider>
-                    <mat-list-item *ngIf="rest.facebook!=''" >מעבר לפייסבוק
+                    <mat-list-item *ngIf="rest.facebook!=''">מעבר לפייסבוק
                         <pre> </pre>
                         <a href="{{rest.facebook}}">לחץ כאן</a>
                     </mat-list-item>
@@ -69,18 +97,18 @@
                     <mat-list-item>נגישות: {{rest.accessibility}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>תפריט ללא גלוטן: {{ rest.gfMenu}}</mat-list-item>
-                    
 
-                    
-                
-                
+
+
+
+
                 </mat-list>
 
 
-                
+
             </div>
 
         </mat-expansion-panel>
     </mat-accordion>
-    
+
 </div>

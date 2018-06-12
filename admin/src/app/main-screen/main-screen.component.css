@@ -27,3 +27,7 @@
     border: none;
     
 }
+
+.form-group {
+    text-align: start;
+}
