@@ -25,8 +25,8 @@ export class DetailsPage {
      if( this.res==null){
        alert("STOP")
      }
-     console.log('eee');
-     console.log(this.res);
+     
+    // console.log(this.res);
   }
 
 }
