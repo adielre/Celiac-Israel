@@ -12,7 +12,6 @@ export class AddAdminComponent implements OnInit {
   constructor(public authService: AuthService) { }
 
   signup() {
-    console.log('in signup at add admin');
     this.authService.signup(this.email, this.password);
     this.email = this.password = '';
   }

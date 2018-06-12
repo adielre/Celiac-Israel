@@ -13,15 +13,12 @@ export class AuthService {
     this.userLoggin = false;
   }
   signup(email: string, password: string) {
-    console.log('in signup at authserver');
     this.firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!', value);
-        console.log('^!' );
-        console.log('^!');
-        console.log('^!');
+
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
