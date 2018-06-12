@@ -17,11 +17,9 @@
         <mat-expansion-panel>
             <mat-expansion-panel-header>
                 
-
-                    
                     <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash"><i class="fa fa-trash"></i></button>
                    
-                        <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> <i class="fas fa-pencil-alt"></i>  </button>
+                    <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> <i class="fas fa-pencil-alt"></i>  </button>
 
                 <mat-panel-title>
                     {{rest.name}}
@@ -32,35 +30,34 @@
             </mat-expansion-panel-header>             
             <div class='content'>
                 <mat-list>
-                   
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>טלפון: {{rest.phone}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.phone!=''">טלפון: {{rest.phone}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>אימל: {{rest.email}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.email!=''">אימל: {{rest.email}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>שעות פתיחה: {{rest.openingTime}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.openingTime!=''">שעות פתיחה: {{rest.openingTime}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>טווח מחירים: {{rest.priceRange}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.priceRange!=''">טווח מחירים: {{rest.priceRange}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.restauranttype!=''">סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.TypeOfBusiness!=''">סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>מידע נוסף: {{rest.moreInformation}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.moreInformation!=''">מידע נוסף: {{rest.moreInformation}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.additionalPreferences!=''">העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.sensitivePreferences!=''">רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>מתקנים:{{rest.facilities}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.facilities!=''">מתקנים:{{rest.facilities}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item> מעבר לאתר האינטרנט
+                    <mat-list-item *ngIf="rest.website!=''"> מעבר לאתר האינטרנט
                         <pre> </pre>
                         <a href="{{rest.website}}"> לחץ כאן </a>
                     </mat-list-item>
                     <mat-divider> </mat-divider>
-                    <mat-list-item>מעבר לפייסבוק
+                    <mat-list-item *ngIf="rest.facebook!=''" >מעבר לפייסבוק
                         <pre> </pre>
                         <a href="{{rest.facebook}}">לחץ כאן</a>
                     </mat-list-item>
