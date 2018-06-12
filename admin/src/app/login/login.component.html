@@ -11,8 +11,9 @@
     <div class="col-12 text-center"> 
       <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" *ngIf="authService.user | async">Logout</button>
     </div>-->
-    <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()">להתחלה לחץ כאן</button>
-  
+    <div class="col text-center">
+      <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()">להתחלה לחץ כאן</button>
+    </div>
   </div>
 <div *ngIf="!(authService.user | async)">
   <input type="text" [(ngModel)]="email" placeholder="email">
