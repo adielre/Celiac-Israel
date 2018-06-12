@@ -45,7 +45,7 @@ export class AddEditScreenComponent implements OnInit {
   TypeOfBusiness : string;
   
   
-
+ 
 public save(){
     let obj = {
       namePlace: this.namePlace,
