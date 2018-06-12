@@ -1,16 +1,20 @@
-<div class="col text-center">
 
-  <h1 >הוספת משתמש </h1>
-  <div><input type="text" [(ngModel)]="email" placeholder="email"></div>
+<div class="container">
 
-  <div><input type="password" [(ngModel)]="password" placeholder="password"></div>
-  
-  <div class="col-12 text-center">
-    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="signup()" routerLink="/main-screen">הוספת משתמש</button>
-  </div>
-  <div class="col-12 text-center">
-      <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
+  <div class="row headerRow">
+    <h2>הוספת משתמש</h2>
   </div>
 
+  <form>
+    <div class="form-group">
+      <label>אימייל:</label>
+      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="כתובת אימייל">
+    </div>
+    <div class="form-group">
+      <label>סיסמה:</label>
+      <input type="password" class="form-control" placeholder="סיסמה">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="signup()" routerLink="/main-screen">הוסף משתמש</button>
+    <button type="button" class="btn btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
+  </form>
 </div>
-

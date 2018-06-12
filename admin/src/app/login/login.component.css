@@ -14,7 +14,7 @@ input[type=text]
     width: 20%;
     padding-top: 20px;
 }
-
+/* 
 input[type=password]
 {
     display: block;
@@ -22,7 +22,7 @@ input[type=password]
     margin-right: auto;
     width: 20%;
     padding-top: 20px;
-}
+} */
 
 h3
 {
@@ -36,4 +36,13 @@ h3
 
 .container {
     margin-top: 25px;
+}
+
+* {
+    text-align: start;
+}
+
+form {
+   padding-left: 250px;
+   padding-right: 250px;
 }
