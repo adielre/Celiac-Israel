@@ -32,7 +32,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatListModule} from '@angular/material/list';
-import {AuthGuardService} from './servises/auth-guard.service'
+import {AuthGuardService} from './servises/auth-guard.service';
+import { AddAdminComponent } from './add-admin/add-admin.component'
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AuthGuardService} from './servises/auth-guard.service'
     AddEditScreenComponent,
     LoginComponent,
     MainScreenComponent,
-    MainScreenPopupComponent
+    MainScreenPopupComponent,
+    AddAdminComponent
     
   ],
   entryComponents: [MainScreenPopupComponent],
