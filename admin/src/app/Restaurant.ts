@@ -1,25 +1,25 @@
 
 
 export class Restaurant {
-    name: string
-    address: string
-    phone: string
-    website: string
-    imageUrl: string
-    facebook: string
-    email: string
-    openingTime: string
-    priceRange: string
-    restauranttype: string
-    description: string
-    moreInformation: string
-    additionalPreferences: string
-    sensitivePreferences: string
-    facilities: string
+    name: string='';
+    address: string='';
+    phone: string='';
+    website: string='';
+    imageUrl: string='';
+    facebook: string='';
+    email: string='';
+    openingTime:string='';
+    priceRange: string='';
+    restauranttype:string='';
+    description: string='';
+    moreInformation: string='';
+    additionalPreferences: string='';
+    sensitivePreferences: string='';
+    facilities: string='';
+    TypeOfBusiness : string='';
     kosher: boolean
     accessibility: boolean
     gfMenu: boolean
-    TypeOfBusiness : string
 
     constructor(restObj) {
         this.name = restObj['namePlace']
@@ -28,6 +28,7 @@ export class Restaurant {
         this.email= restObj ['email']
         this.facebook = restObj['links']['facebook']
         this.website = restObj['links']['website']
+        this.imageUrl= restObj['links']['logo']
         this.openingTime = restObj['opening']
         this.description = restObj['Description']
         this.priceRange = restObj['priceRange']
