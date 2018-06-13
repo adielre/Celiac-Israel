@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Restaurant } from '../Restaurant';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { FirebaseService } from '../firebase-service/firebase.service';
 
 
 @Component({
@@ -27,10 +28,6 @@ export class MainScreenComponent implements OnInit {
       )
   }
   
-  // deleteResturant(event,resturant)
-  // {
-  //   this.resturantService.deleteResturant(resturant);
-  // }
   openDialog(): void {
     let dialogRef = this.dialog.open(MainScreenPopupComponent, {
       width: '250px',
@@ -42,7 +39,11 @@ export class MainScreenComponent implements OnInit {
 
   }  
 }
-  @Component({
+  
+
+
+
+@Component({
     selector: 'main-screen-popup',
     templateUrl: './main-screen-popup.component.html',
     
@@ -52,11 +53,14 @@ export class MainScreenComponent implements OnInit {
 
     constructor(
       public dialogRef: MatDialogRef<MainScreenPopupComponent>,
-      @Inject(MAT_DIALOG_DATA) public data: any) { }
+      @Inject(MAT_DIALOG_DATA) public data: any,private firebase: AngularFirestore) { }
 
       onNoClick(): void {
+        this.firebase.collection('resturant').doc('חעיכגדס').delete();
         this.dialogRef.close();
       }
+s
+      
 
   }
 

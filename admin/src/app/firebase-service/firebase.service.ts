@@ -1,6 +1,7 @@
 
 
 import { Injectable } from '@angular/core';
+import { FirebaseDatabase } from '@firebase/database-types';
 
 @Injectable()
 export class FirebaseService {
@@ -46,6 +47,12 @@ export class FirebaseService {
   queryFirestore(): FirestoreQuery {
     return new FirestoreQuery(this.firestore)
   }
+
+  delete(ID : string)
+   {
+    this.firestore.collection('resturant').doc().delete();
+     
+   }
 
 }
 
@@ -165,4 +172,10 @@ class FirestoreQuery {
     return this
   }
 
+
+  
+
 }
+
+  
+  

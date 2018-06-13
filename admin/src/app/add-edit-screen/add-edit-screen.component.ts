@@ -9,7 +9,7 @@ import { FirebaseService } from '../firebase-service/firebase.service';
 })
 export class AddEditScreenComponent implements OnInit {
   title = 'app';
-  private resColl
+  public resColl
   constructor(private afs: AngularFirestore){
      
   } 
