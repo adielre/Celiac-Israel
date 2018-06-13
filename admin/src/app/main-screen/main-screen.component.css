@@ -27,3 +27,15 @@
     border: none;
     
 }
+
+.form-group {
+    text-align: start;
+}
+
+.upperContainer>.row {
+    margin-bottom: 35px;
+}
+
+.upperContainer .col {
+    text-align: center;
+}

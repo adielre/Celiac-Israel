@@ -26,14 +26,25 @@ export class HomePage {
   openPlaceList() {
 
     if(!this.locationForm.valid)//incorect valid
+    {
+      this.presentAlert();
       return;
+    }
+      
+
+      /*alert("a");
+      if (this.searchString.value == undefined) {
+        alert("b");
+        this.presentAlert();
+      }  
+      alert("c");*/
    
-      this.loadPage2=1;
+    this.loadPage2=1;
 
     this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
-          alert('אין מסעדות במיקום זה');
+          this.presentAlert2();
           this.loadPage2=0;
         } else {
           //alert(this.result)
@@ -48,44 +59,24 @@ export class HomePage {
   onLoadPlaces() {
     if (this.myLocation == undefined) {
       this.presentAlert();
-      //console.log("hello");
+      
     }
     else {
 
       this.myLocation = undefined;
       this.navCtrl.push(Page2Page);
-      //console.log("world");
+     
     }
   }
 
- /* tryMe() {
-    console.log('Clicked')
-    window['firebase'].firestore().collection("resturant").add(
-      {
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
-      }
-    )
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-      });
-  }
 
-  createNewUser(email: string, password: string) {
-    window['firebase'].auth().createUserWithEmailAndPassword(email, password)
-  }*/
 
   getRes(myLocation: string) {
 
   }
 
   presentAlert() 
-  {
-    
+  { 
     let alert = this.alertCtrl.create({
       title: 'שגיאה',
       subTitle: 'אתה חייב להכניס מיקום',
@@ -93,7 +84,17 @@ export class HomePage {
       buttons: ['אשר']
     });
     alert.present();
-    
+  }
+
+  presentAlert2() 
+  { 
+    let alert = this.alertCtrl.create({
+      title: 'שגיאה',
+      subTitle: 'לא קיימות מסעדות במאגר, נסה מיקום אחר',
+      cssClass: 'rtlAlert',
+      buttons: ['אשר']
+    });
+    alert.present();
   }
 
 

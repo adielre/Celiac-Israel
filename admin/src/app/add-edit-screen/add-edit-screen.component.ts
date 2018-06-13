@@ -9,7 +9,7 @@ import { FirebaseService } from '../firebase-service/firebase.service';
 })
 export class AddEditScreenComponent implements OnInit {
   title = 'app';
-  private resColl
+  public resColl
   constructor(private afs: AngularFirestore){
      
   } 
@@ -17,38 +17,34 @@ export class AddEditScreenComponent implements OnInit {
   $key: string;
   namePlace: string;
   Address: string;
-  phone: string;
-  email: string;
-
-  restauranttype: string;
-  Description: string;
-  opening: string;
+  phone: string='';
+  email: string='';
+  restauranttype: string='';
+  Description: string='';
+  opening: string='';
  
   /*opening: {openHour: number, openMin: number, closeHour: number, closeMin: number}={
     openHour: 0, openMin: 0, closeHour: 0, closeMin: 0
   }*/
-  sensitivePreferences: {gfMenu: boolean,sensitivity: string,preferences: string, accessibility: boolean, kosher: boolean}={
+  sensitivePreferences: {gfMenu: boolean,sensitivity?: string,preferences?: string, accessibility: boolean, kosher: boolean}={
     gfMenu: false/*Gluten free menu*/,sensitivity: "",preferences: "", accessibility: false, kosher: false
   }
-  linksUrl:{ website: string, logo: string ,facebook:  string;}={
+  linksUrl:{ website?: string, logo?: string ,facebook?:  string;}={
     website: "", logo:"",   facebook:  ""
   }
  /* location_in_map:{x:number, y: number}={
     x:0, y:0
   }*/
   
-  priceRange: string;
+  priceRange:  string='';
   
   
-  facilities: string;
-  moreInfo: string;
-  TypeOfBusiness : string;
+  facilities:  string='';
+  moreInfo:  string='';
+  TypeOfBusiness :  string='';
   
-  
-
-
-
-  public save(){
+ 
+public save(){
     let obj = {
       namePlace: this.namePlace,
       Address:this.Address,
@@ -69,7 +65,8 @@ export class AddEditScreenComponent implements OnInit {
       /*location_in_map: this.location_in_map,
     */
     }
-    this.resColl.add(obj)
+    this.resColl = this.afs.collection("resturant").doc(this.namePlace).set(obj)
+    //this.resColl.add(obj)
   }
   ngOnInit() {
     this.resColl = this.afs.collection("resturant");
