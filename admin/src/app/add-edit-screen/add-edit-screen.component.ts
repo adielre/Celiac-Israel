@@ -14,7 +14,7 @@ export class AddEditScreenComponent implements OnInit {
      
   } 
 
-
+  $key: string;
   namePlace: string;
   Address: string;
   phone: string;

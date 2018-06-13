@@ -37,6 +37,10 @@ export class MainScreenComponent implements OnInit {
     });
 
   }  
+  onEdit(restaurants: Restaurant) {
+    
+
+  }
 }
   @Component({
     selector: 'main-screen-popup',
