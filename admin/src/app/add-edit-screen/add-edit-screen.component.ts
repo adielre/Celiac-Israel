@@ -65,7 +65,8 @@ public save(){
       /*location_in_map: this.location_in_map,
     */
     }
-    this.resColl.add(obj)
+    this.resColl = this.afs.collection("resturant").doc(this.namePlace).set(obj)
+    //this.resColl.add(obj)
   }
   ngOnInit() {
     this.resColl = this.afs.collection("resturant");
