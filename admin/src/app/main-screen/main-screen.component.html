@@ -1,22 +1,59 @@
-<div class="col-12 text-center">
-    <button type="button" class="btn btn-outline-primary btn-primary" (click)="save()" routerLink="/edit-screen">הוסף מסעדה</button>
-</div>
-<div class="col-12 text-center">
-    <button type="button" class="btn btn-outline-primary btn-primary" (click)="save()" routerLink="/login">צא מהמערכת</button>
+
+<div class="container upperContainer">
+
+    <div class="row">
+
+            <div class="col">
+                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/edit-screen">הוסף מסעדה</button>
+            </div>
+            <div class="col">
+                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/login">צא מהמערכת</button>
+            </div>
+            <div class="col">
+                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/add-admin">הוסף משתמש</button>
+            </div>
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>סינון לפי מיקום:</label>
+                <select class="form-control" (change)='setLocationFilter($event)'>
+                    <option *ngFor='let location of locations' value='{{location.value}}'>{{location.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+                <label>סינון לפי סוג עסק:</label>
+                <select class="form-control" (change)='setTypeFilter($event)'>
+                        <option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
 
 <div class="container">
 
     <mat-accordion *ngFor='let rest of restaurants'>
-        <mat-expansion-panel>
+        <mat-expansion-panel *ngIf='rest.showOnScreen'>
             <mat-expansion-panel-header>
-                
 
-                    
-                    <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash"><i class="fa fa-trash"></i></button>
-                   
-                        <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()"> <i class="fas fa-pencil-alt"></i>  </button>
+                <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash">
+                    <i class="fa fa-trash"></i>
+                </button>
+
+                <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
 
                 <mat-panel-title>
                     {{rest.name}}
@@ -24,38 +61,37 @@
                 <mat-panel-description>
                     {{rest.description}}
                 </mat-panel-description>
-            </mat-expansion-panel-header>             
+            </mat-expansion-panel-header>
             <div class='content'>
                 <mat-list>
-                   
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>טלפון: {{rest.phone}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.phone!=''">טלפון: {{rest.phone}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>אימל: {{rest.email}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.email!=''">אימל: {{rest.email}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>שעות פתיחה: {{rest.openingTime}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.openingTime!=''">שעות פתיחה: {{rest.openingTime}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>טווח מחירים: {{rest.priceRange}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.priceRange!=''">טווח מחירים: {{rest.priceRange}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.restauranttype!=''">סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.TypeOfBusiness!=''">סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>מידע נוסף: {{rest.moreInformation}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.moreInformation!=''">מידע נוסף: {{rest.moreInformation}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.additionalPreferences!=''">העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
+                    <mat-list-item *ngIf="rest.sensitivePreferences!=''">רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>מתקנים:{{rest.facilities}}</mat-list-item>
+                    <mat-list-item *ngIf="rest.facilities!=''">מתקנים:{{rest.facilities}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item> מעבר לאתר האינטרנט
+                    <mat-list-item *ngIf="rest.website!=''"> מעבר לאתר האינטרנט
                         <pre> </pre>
                         <a href="{{rest.website}}"> לחץ כאן </a>
                     </mat-list-item>
                     <mat-divider> </mat-divider>
-                    <mat-list-item>מעבר לפייסבוק
+                    <mat-list-item *ngIf="rest.facebook!=''">מעבר לפייסבוק
                         <pre> </pre>
                         <a href="{{rest.facebook}}">לחץ כאן</a>
                     </mat-list-item>
@@ -65,15 +101,15 @@
                     <mat-list-item>נגישות: {{rest.accessibility}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>תפריט ללא גלוטן: {{ rest.gfMenu}}</mat-list-item>
-                    
 
-                    
-                
-                
+
+
+
+
                 </mat-list>
 
 
-                
+
             </div>
 
         </mat-expansion-panel>

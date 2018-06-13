@@ -22,8 +22,9 @@ import {MatDialogModule, MatDialog} from '@angular/material/dialog';
 
 
 //login import:
-import { AuthService } from './auth.service';
+import { AuthService } from './/servises/auth.service';
 import { RouterModule } from '@angular/router';
+
 import { routing } from './app.rout';
 import { MainScreenComponent, MainScreenPopupComponent } from './main-screen/main-screen.component';
 import { FirebaseService } from './firebase-service/firebase.service';
@@ -31,6 +32,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatListModule} from '@angular/material/list';
+import {AuthGuardService} from './servises/auth-guard.service';
+import { AddAdminComponent } from './add-admin/add-admin.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import {MatListModule} from '@angular/material/list';
     AddEditScreenComponent,
     LoginComponent,
     MainScreenComponent,
-    MainScreenPopupComponent
+    MainScreenPopupComponent,
+    AddAdminComponent
     
   ],
   entryComponents: [MainScreenPopupComponent],
@@ -60,7 +64,7 @@ import {MatListModule} from '@angular/material/list';
 
   ],
  
-  providers: [AuthService],//maybe also:  providers: [],
+  providers: [AuthService,AuthGuardService],//maybe also:  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
