@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject,Input } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Restaurant } from '../Restaurant';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
@@ -122,7 +122,7 @@ export class MainScreenComponent implements OnInit {
         this.firebase.collection('resturant').doc('חעיכגדס').delete();
         this.dialogRef.close();
       }
-
+s
       
 
   }

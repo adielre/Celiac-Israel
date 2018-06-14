@@ -13,9 +13,6 @@ export class AuthService {
     this.userLoggin = false;
   }
   signup(email: string, password: string) {
-    console.log("signup");
-    console.log(email);
-    console.log(email);
     this.firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password)
@@ -25,8 +22,7 @@ export class AuthService {
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
-      });  
-      console.log("signup end");  
+      });    
   }
 
   login(email: string, password: string) {
@@ -43,7 +39,6 @@ export class AuthService {
   }
 
   logout() {
-
     this.firebaseAuth
       .auth
       .signOut();
