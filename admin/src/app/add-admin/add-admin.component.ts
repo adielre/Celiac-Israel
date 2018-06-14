@@ -12,7 +12,9 @@ export class AddAdminComponent implements OnInit {
   constructor(public authService: AuthService) { }
 
   signup() {
+    console.log("signup in add admin"+this.email+ " "+this.password);
     this.authService.signup(this.email, this.password);
+
     this.email = this.password = '';
   }
   ngOnInit() {

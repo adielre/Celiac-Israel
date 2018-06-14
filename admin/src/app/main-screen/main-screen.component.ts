@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject,Input } from '@angular/core';
 import { Restaurant } from '../Restaurant';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';

@@ -10,9 +10,9 @@ import { AddAdminComponent } from "./add-admin/add-admin.component";
 export const routing: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LoginComponent },
-    { path: "edit-screen", component: AddEditScreenComponent },
-    { path: "main-screen", component: MainScreenComponent },
-    { path: "edit:id", component:EditComponent },
+    //{ path: "edit-screen", component: AddEditScreenComponent },
+    //{ path: "main-screen", component: MainScreenComponent },
+    //{ path: "edit:id", component:EditComponent },
    
     { path: "edit-screen", component: AddEditScreenComponent, canActivate: [AuthGuardService]},
     { path: "main-screen", component: MainScreenComponent, canActivate: [AuthGuardService]},
