@@ -3,6 +3,7 @@ import { Restaurant } from '../Restaurant';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { FirebaseService } from '../firebase-service/firebase.service';
+import { AuthService } from '../servises/auth.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class MainScreenComponent implements OnInit {
 
   businessTypes = [ ]
 
-  constructor(private firebase: AngularFirestore, public dialog: MatDialog) { }
+  constructor(private firebase: AngularFirestore, public dialog: MatDialog,public authService: AuthService) {}
+
 
   ngOnInit() {
     // display resturant
@@ -100,6 +102,9 @@ export class MainScreenComponent implements OnInit {
   onEdit(restaurants: Restaurant) {
     
 
+  }
+  logout() {
+    this.authService.logout();
   }
 }
   
