@@ -30,11 +30,16 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
+        this.userLoggin = true;
         console.log('Nice, it worked!');
+        console.log(this.userLoggin+'!!!!!!11111');
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
+        alert("שם משתמש או ססמא שגויים");
+        this.userLoggin = false;
       });
+      console.log(this.userLoggin+'2222');
       this.userLoggin = true;
   }
 
@@ -48,9 +53,14 @@ export class AuthService {
 /**
  *  this method return true in case the user is logged in, and false otherwise
  */
+
   isLoggedIn(){
-    console.log("this.userLoggin");
-    console.log(this.userLoggin);
+    console.log(" ");
+    console.log("isLoggedIn");
+    console.log("this.userLoggin "+ this.userLoggin);
+    console.log(this.user);
+    console.log("^");
+   // if( !!this.user)
     if (this.userLoggin == false)
       return false;
     else
