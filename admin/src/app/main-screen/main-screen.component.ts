@@ -127,7 +127,7 @@ export class MainScreenComponent implements OnInit {
         this.firebase.collection('resturant').doc('חעיכגדס').delete();
         this.dialogRef.close();
       }
-s
+
       
 
   }
