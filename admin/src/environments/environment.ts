@@ -6,12 +6,12 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyC2S1o1PZU7zE_oh8CLoV3M_ktQCR95pUc",
-    authDomain: "celiacisreal.firebaseapp.com",
-    databaseURL: "https://celiacisreal.firebaseio.com",
-    projectId: "celiacisreal",
-    storageBucket: "celiacisreal.appspot.com",
-    messagingSenderId: "819888795055"
+    apiKey: "AIzaSyD3boXziog2U-Fpaxzqfou1CL5LVhpEJs4",
+    authDomain: "celiac-f036d.firebaseapp.com",
+    databaseURL: "https://celiac-f036d.firebaseio.com",
+    projectId: "celiac-f036d",
+    storageBucket: "",
+    messagingSenderId: "948368755391"
   }
 
 
