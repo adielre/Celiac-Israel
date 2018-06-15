@@ -24,12 +24,14 @@
     <div class="row headerRow">
       <h2>הוספת משתמש</h2>
     </div>
+    <form>
       <div>
+          
           <label>אימייל:</label>
-      <input type="text" [(ngModel)]="email" placeholder="email"></div>
+      <input type="text" class="form-control" aria-describedby="emailHelp" [(ngModel)]="email" placeholder="email"></div>
       <div>
       <label>סיסמה:</label>
-      <input type="password" [(ngModel)]="password" placeholder="password"></div>
+      <input type="password" class="form-control" [(ngModel)]="password" placeholder="password"></div>
 
       <div class="col-12 text-center">
           <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="signup()" routerLink="/main-screen">הוספת משתמש</button>
@@ -37,5 +39,5 @@
       <div class="col-12 text-center">
           <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
       </div>
-
+    </form>
 </div>
