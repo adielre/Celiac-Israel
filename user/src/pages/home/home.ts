@@ -19,7 +19,7 @@ export class HomePage {
 
     constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService, public formBuilder: FormBuilder) {
       this.locationForm = formBuilder.group({
-         myLocation: ['', Validators.compose([Validators.pattern('[א-ת ]*'), Validators.required])],
+         myLocation: ['', Validators.compose([Validators.pattern('[א-ת, ]*(,)?[א-ת, ]*[0-9]*'), Validators.required])],
       });
   }
 

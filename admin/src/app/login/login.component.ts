@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../servises/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +10,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
-constructor(public authService: AuthService, private router: Router) {}
+constructor(public authService: AuthService) {}
 
   login() {
     
