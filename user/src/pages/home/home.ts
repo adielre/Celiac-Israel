@@ -41,7 +41,7 @@ export class HomePage {
    
     this.loadPage2=1;
 
-    this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
+    this.firebase.queryFirestore().fromCollection('resturant').field('city').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
           this.presentAlert2();
