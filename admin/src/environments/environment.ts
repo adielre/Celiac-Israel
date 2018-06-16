@@ -10,7 +10,7 @@ export const environment = {
     authDomain: "celiac-f036d.firebaseapp.com",
     databaseURL: "https://celiac-f036d.firebaseio.com",
     projectId: "celiac-f036d",
-    storageBucket: "",
+    storageBucket: "celiac-f036d.appspot.com",
     messagingSenderId: "948368755391"
   }
 
