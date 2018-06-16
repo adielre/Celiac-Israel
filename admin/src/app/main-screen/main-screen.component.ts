@@ -44,7 +44,7 @@ export class MainScreenComponent implements OnInit {
     for (let i = 0; i < this.restaurants.length; i++){
       this.restaurants[i].showOnScreen = true
       if(selected == this.toShowAll) continue// continue  for the next iter
-      if(this.restaurants[i].address != selected) {
+      if(this.restaurants[i].city != selected) {
           this.restaurants[i].showOnScreen = false
       }
     }
@@ -67,7 +67,7 @@ export class MainScreenComponent implements OnInit {
     this.locations.push({name: this.toShowAll, value: this.toShowAll})
     this.businessTypes.push({name: this.toShowAll, value: this.toShowAll})
     for(let i = 0 ; i < this.restaurants.length ; i++) {
-      let city = this.restaurants[i].address
+      let city = this.restaurants[i].city
       let type = this.restaurants[i].TypeOfBusiness
       if(city != null && city.trim().length > 0 && this.toInclude(this.locations, city.trim())) {
         this.locations.push({name: city, value: city})
