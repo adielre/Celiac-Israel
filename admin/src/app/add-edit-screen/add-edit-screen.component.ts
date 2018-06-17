@@ -18,6 +18,7 @@ export class AddEditScreenComponent implements OnInit {
   namePlace: string;
   Address: string;
   phone: string='';
+  lastmodi: string='';
   email: string='';
   restauranttype: string='';
   Description: string='';
@@ -50,6 +51,7 @@ public save(){
       Address:this.Address,
       city: this.city,
       phone: this.phone,
+      lastmodi:this.lastmodi,
       email: this.email,
       opening: this.opening,
       Description:this.Description,

@@ -23,12 +23,14 @@ export class Restaurant {
     gfMenu: boolean;
     showOnScreen: boolean = true
     id: string;
+    lastmodi: string= '';
 
     constructor(restObj) {
         this.name = restObj['namePlace']
         this.phone = restObj['phone']
         this.address = restObj['Address']
         this.id = restObj.id
+        this.lastmodi=restObj['lastmodi']
         this.email = restObj['email']
         if (restObj['links']) {
             this.facebook = restObj['links']['facebook']
