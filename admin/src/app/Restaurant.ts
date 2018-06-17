@@ -1,49 +1,53 @@
 
 
 export class Restaurant {
-    name: string='';
-    address: string='';
-    city: string='';
-    phone: string='';
-    website: string='';
-    imageUrl: string='';
-    facebook: string='';
-    email: string='';
-    openingTime:string='';
-    priceRange: string='';
-    restauranttype:string='';
-    description: string='';
-    moreInformation: string='';
-    additionalPreferences: string='';
-    sensitivePreferences: string='';
-    facilities: string='';
-    TypeOfBusiness : string='';
+    name: string = '';
+    address: string = '';
+    city: string = '';
+    phone: string = '';
+    website: string = '';
+    imageUrl: string = '';
+    facebook: string = '';
+    email: string = '';
+    openingTime: string = '';
+    priceRange: string = '';
+    restauranttype: string = '';
+    description: string = '';
+    moreInformation: string = '';
+    additionalPreferences: string = '';
+    sensitivePreferences: string = '';
+    facilities: string = '';
+    TypeOfBusiness: string = '';
     kosher: boolean;
     accessibility: boolean;
     gfMenu: boolean;
     showOnScreen: boolean = true
+    id: string;
 
     constructor(restObj) {
         this.name = restObj['namePlace']
-        this.phone= restObj ['phone']
+        this.phone = restObj['phone']
         this.address = restObj['Address']
-        this.email= restObj ['email']
-        this.facebook = restObj['links']['facebook']
-        this.website = restObj['links']['website']
-        this.imageUrl= restObj['links']['logo']
+        this.id = restObj.id
+        this.email = restObj['email']
+        if (restObj['links']) {
+            this.facebook = restObj['links']['facebook']
+            this.website = restObj['links']['website']
+            this.imageUrl = restObj['links']['logo']
+        }
         this.openingTime = restObj['opening']
         this.description = restObj['Description']
         this.priceRange = restObj['priceRange']
         this.restauranttype = restObj['restauranttype']
-        this.moreInformation=restObj['moreInfo']
-        this.additionalPreferences=restObj['sensitivePreferences']['preferences']
-        this.sensitivePreferences=restObj['sensitivePreferences']['preferences']
-        this.facilities=restObj['facilities']
-        this.kosher =restObj['sensitivePreferences']['kosher']
-        this.accessibility=restObj['sensitivePreferences']['accessibility']
-        this.gfMenu=restObj['sensitivePreferences']['gfMenu']
-        this.TypeOfBusiness=restObj['TypeOfBusiness']
-        this.city=restObj['city']
+        this.moreInformation = restObj['moreInfo']
+        this.additionalPreferences = restObj['sensitivePreferences']['preferences']
+        this.sensitivePreferences = restObj['sensitivePreferences']['preferences']
+        this.facilities = restObj['facilities']
+        this.kosher = restObj['sensitivePreferences']['kosher']
+        this.accessibility = restObj['sensitivePreferences']['accessibility']
+        this.gfMenu = restObj['sensitivePreferences']['gfMenu']
+        this.TypeOfBusiness = restObj['TypeOfBusiness']
+        this.city = restObj['city']
     }
 
 }

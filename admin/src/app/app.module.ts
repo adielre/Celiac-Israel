@@ -64,7 +64,7 @@ import { AddAdminComponent } from './add-admin/add-admin.component'
 
   ],
  
-  providers: [AuthService,AuthGuardService],//maybe also:  providers: [],
+  providers: [AuthService,AuthGuardService, FirebaseService],//maybe also:  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
