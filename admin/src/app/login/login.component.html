@@ -25,7 +25,7 @@
       <label>סיסמה:</label>
       <input name='password' [(ngModel)]="password" type="password" class="form-control" placeholder="סיסמה">
     </div>
-    <button type="button" class="btn btn-primary" (click)="login()" routerLink="/main-screen" [disabled]="!email || !password">התחבר</button>
+    <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!email || !password">התחבר</button>
   </form>
 
   <!-- 

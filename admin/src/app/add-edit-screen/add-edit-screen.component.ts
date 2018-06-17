@@ -14,7 +14,7 @@ export class AddEditScreenComponent implements OnInit {
      
   } 
 
-
+  $key: string;
   namePlace: string;
   Address: string;
   phone: string='';
@@ -38,7 +38,7 @@ export class AddEditScreenComponent implements OnInit {
   
   priceRange:  string='';
   
-  
+  city: string ;
   facilities:  string='';
   moreInfo:  string='';
   TypeOfBusiness :  string='';
@@ -48,6 +48,7 @@ public save(){
     let obj = {
       namePlace: this.namePlace,
       Address:this.Address,
+      city: this.city,
       phone: this.phone,
       email: this.email,
       opening: this.opening,

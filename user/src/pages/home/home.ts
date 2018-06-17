@@ -19,7 +19,7 @@ export class HomePage {
 
     constructor(public navCtrl: NavController, private alertCtrl: AlertController,private firebase: FirebaseService, public formBuilder: FormBuilder) {
       this.locationForm = formBuilder.group({
-         myLocation: ['', Validators.compose([Validators.pattern('[א-ת ]*'), Validators.required])],
+         myLocation: ['', Validators.compose([Validators.pattern('[א-ת, ]*(,)?[א-ת, ]*[0-9]*'), Validators.required])],
       });
   }
 
@@ -41,7 +41,7 @@ export class HomePage {
    
     this.loadPage2=1;
 
-    this.firebase.queryFirestore().fromCollection('resturant').field('Address').equals(this.searchString.value).runQuery()
+    this.firebase.queryFirestore().fromCollection('resturant').field('city').equals(this.searchString.value).runQuery()
       .then(function (res) {
          if (res.length === 0) {
           this.presentAlert2();

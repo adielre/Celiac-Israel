@@ -26,16 +26,7 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log('Nice, it worked!');
-      })
-      .catch(err => {
-        console.log('Something went wrong:',err.message);
-      });
-      this.userLoggin = true;
+    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
   }
 
   logout() {
@@ -48,9 +39,14 @@ export class AuthService {
 /**
  *  this method return true in case the user is logged in, and false otherwise
  */
+
   isLoggedIn(){
-    console.log("this.userLoggin");
-    console.log(this.userLoggin);
+    console.log(" ");
+    console.log("isLoggedIn");
+    console.log("this.userLoggin "+ this.userLoggin);
+    console.log(this.user);
+    console.log("^");
+   // if( !!this.user)
     if (this.userLoggin == false)
       return false;
     else

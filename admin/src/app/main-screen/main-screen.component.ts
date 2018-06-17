@@ -5,6 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FirebaseService } from '../firebase-service/firebase.service';
 import { AddEditScreenComponent } from '../add-edit-screen/add-edit-screen.component';
 
+import { AuthService } from '../servises/auth.service';
 
 
 @Component({
@@ -39,16 +40,15 @@ export class MainScreenComponent implements OnInit {
     //     err => { console.log(err) }
     //   )
   }
-
   //----------------------------------------------------------------------------
   //this function is called once the user has selected a location filter
   setLocationFilter(event) {
     let selected = event.target.value // on howm the even accure
     for (let i = 0; i < this.restaurants.length; i++) {
       this.restaurants[i].showOnScreen = true
-      if (selected == this.toShowAll) continue// continue  for the next iter
-      if (this.restaurants[i].address != selected) {
-        this.restaurants[i].showOnScreen = false
+      if(selected == this.toShowAll) continue// continue  for the next iter
+      if(this.restaurants[i].city != selected) {
+          this.restaurants[i].showOnScreen = false
       }
     }
   }
@@ -67,10 +67,10 @@ export class MainScreenComponent implements OnInit {
 
   // this function called once at the page load in order to fill the filter arrays
   fillFilterArrays() {
-    this.locations.push({ name: this.toShowAll, value: this.toShowAll })
-    this.businessTypes.push({ name: this.toShowAll, value: this.toShowAll })
-    for (let i = 0; i < this.restaurants.length; i++) {
-      let city = this.restaurants[i].address
+    this.locations.push({name: this.toShowAll, value: this.toShowAll})
+    this.businessTypes.push({name: this.toShowAll, value: this.toShowAll})
+    for(let i = 0 ; i < this.restaurants.length ; i++) {
+      let city = this.restaurants[i].city
       let type = this.restaurants[i].TypeOfBusiness
       if (city != null && city.trim().length > 0 && this.toInclude(this.locations, city.trim())) {
         this.locations.push({ name: city, value: city })

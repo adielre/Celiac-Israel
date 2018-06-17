@@ -32,6 +32,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatListModule} from '@angular/material/list';
+import { EditComponent } from './edit/edit.component';
 import {AuthGuardService} from './servises/auth-guard.service';
 import { AddAdminComponent } from './add-admin/add-admin.component'
 
@@ -42,6 +43,7 @@ import { AddAdminComponent } from './add-admin/add-admin.component'
     LoginComponent,
     MainScreenComponent,
     MainScreenPopupComponent,
+    EditComponent,
     AddAdminComponent
     
   ],

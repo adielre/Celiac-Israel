@@ -1,8 +1,8 @@
 <div class="container">
-  <h1 class="row">הוספת או עריכת מקום</h1>
+  <h1 class="row"> עריכת מקום</h1>
   <div class="row">
     <div class="labels col-2" >
-      *שם המקום:
+      שם המקום:
     </div>
     <div class="col-10">
       <input type="text" class="form-control" placeholder="הכנס שם מקום.."  [(ngModel)]="namePlace" required>
@@ -11,22 +11,12 @@
 
   <div class="row">
     <div class="labels col-2">
-      *כתובת:
+      כתובת:
     </div>
     <div class="col-10">
       <input type="text" class="form-control" placeholder="הכנס כתובת..." [(ngModel)]="Address" required>
     </div>
   </div>
-
-  <div class="row">
-      <div class="labels col-2">
-        *עיר:
-      </div>
-      <div class="col-10">
-        <input type="text" class="form-control" placeholder="הכנס כתובת..." [(ngModel)]="city" required>
-      </div>
-    </div>
-  
 
   <div class="row">
     <div class="labels col-2">
@@ -70,7 +60,7 @@
 
   <div class="row">
     <div class="labels col-2">
-      כתובת אימייל:
+      כתובת אימל:
     </div>
     <div class="col-10">
       <input type="text" class="form-control" placeholder="הכנס כתובת אימייל..." [(ngModel)]="email">
@@ -193,6 +183,4 @@
     <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/main-screen">Save</button> 
 </div>
 
-<div class="col-12 text-center">
-  <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
-</div>
+<button (click)='tryMe()'>Click</button>

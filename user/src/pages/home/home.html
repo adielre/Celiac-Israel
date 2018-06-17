@@ -17,7 +17,7 @@
          <ion-input id = "inputBox"  placeholder="הכנס מיקום"  formControlName="myLocation" type="text"  #searchBox></ion-input>
       
       <ion-item *ngIf="!locationForm.controls.myLocation.valid  && (locationForm.controls.myLocation.dirty )">
-          <p id="fixText">הכנס אותיות בעברית בלבד</p>
+          <p id="fixText">הכנס אותיות בעברית בלבד - בסוף הכתובת ניתן להכניס מספר</p>
       </ion-item>
 
    </form>

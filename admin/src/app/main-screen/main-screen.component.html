@@ -7,13 +7,13 @@
                     <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/edit-screen">הוסף מסעדה</button>
             </div>
             <div class="col">
-                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/login">צא מהמערכת</button>
+                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" routerLink="/login">צא מהמערכת</button>
             </div>
             <div class="col">
                     <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/add-admin">הוסף משתמש</button>
             </div>
 
-
+ 
     </div>
 
     <div class="row">
@@ -65,6 +65,9 @@
             <div class='content'>
                 <mat-list>
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>עיר
+                        : {{rest.city}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item *ngIf="rest.phone!=''">טלפון: {{rest.phone}}</mat-list-item>
                     <mat-divider></mat-divider>
