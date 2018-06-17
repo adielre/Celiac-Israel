@@ -7,8 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-      <div *ngIf='res!=undefined'>
-    <ion-title>{{res.namePlace}} </ion-title>
+    <div *ngIf='res!=undefined'>
+      <ion-title>{{res.namePlace}} </ion-title>
     </div>
   </ion-navbar>
 
@@ -17,51 +17,131 @@
 
 <ion-content padding>
 
+  <ion-grid *ngIf='res!=undefined'>
 
-
-  
-    <div *ngIf='res!=undefined'>
-
-        <img  src={{res.links.logo}}>
-        <br/>
+      <img src={{res.links.logo}}>
+    <ion-row class='dataRow'>
+      <ion-col>
         שעות פתיחה:
+      </ion-col>
+      <ion-col>
         {{res.opening }}
-        <br/>
-        טלפון:
-        {{res.phone}}
-        <br/>
-      כתובת:
-        {{res.Address}}
-        <br/>
-        טווח מחירים:
-        {{res.priceRange}}
-        <div *ngIf='res.linksUrl!=undefined'>
-            <br/>
-            כתובת אתר אינטרנט:
-            {{res.linksUrl.website}}
-            <br/>
-            פייסבוק:
-            {{res.linksUrl.facebook}}
-        </div>
-      
-        <br/>
-        אימל:
-        {{res.email}}
-        <br/>
+      </ion-col>
+    </ion-row>
 
-        <!--סוג מזון:
-        {{res.typeDishes}}
-        <br/>-->
-        תיאור חופשי:
+
+
+    <ion-row>
+      <ion-col>
+        טלפון:
+      </ion-col>
+      <ion-col>
+        {{res.phone}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        כתובת:
+      </ion-col>
+      <ion-col>
+        {{res.Address}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        טווח מחירים:
+      </ion-col>
+      <ion-col>
+        {{res.priceRange}}
+      </ion-col>
+    </ion-row>
+
+
+    <div *ngIf='res.linksUrl!=undefined'>
+      <ion-row>
+        <ion-col>
+          כתובת אתר אינטרנט:
+        </ion-col>
+        <ion-col>
+          {{res.linksUrl.website}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          פייסבוק:
+        </ion-col>
+        <ion-col>
+          {{res.linksUrl.facebook}}
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row>
+      <ion-col>
+        אימייל:
+      </ion-col>
+      <ion-col>
+        {{res.email}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        תיאור:
+      </ion-col>
+      <ion-col>
         {{res.Description}}
-        <br/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
         מידע נוסף:
+      </ion-col>
+      <ion-col>
         {{res.moreInfo}}
-        <br/>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
         העדפות נוספות:
+      </ion-col>
+      <ion-col>
         {{res.sensitivePreferences.preferences}}
-        
- <!--         <ion-row>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
+
+  <!-- <div *ngIf='res!=undefined'>
+
+    <img src={{res.links.logo}}>
+    <br/> שעות פתיחה: {{res.opening }}
+    <br/> טלפון: {{res.phone}}
+    <br/> כתובת: {{res.Address}}
+    <br/> טווח מחירים: {{res.priceRange}}
+    <div *ngIf='res.linksUrl!=undefined'>
+      <br/> כתובת אתר אינטרנט: {{res.linksUrl.website}}
+      <br/> פייסבוק: {{res.linksUrl.facebook}}
+    </div>
+
+    <br/> אימל: {{res.email}}
+    <br/>
+
+    סוג מזון:
+        {{res.typeDishes}}
+        <br/>
+    תיאור חופשי: {{res.Description}}
+    <br/> מידע נוסף: {{res.moreInfo}}
+    <br/> העדפות נוספות: {{res.sensitivePreferences.preferences}}
+
+           <ion-row>
             <ion-col col-2 >
              <img  src={{res.links.logo}}>
             </ion-col>
@@ -79,8 +159,8 @@
              <ion-col col-1 >
               <img src="assets/imgs/place-icon.png">
              </ion-col>
-          </ion-row>-->
-    </div>
+          </ion-row>
+  </div>-->
 
 
 </ion-content>

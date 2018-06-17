@@ -19,6 +19,7 @@ export class Page2Page {
   restaurantTypes = []
   businessTypes = []
   toShowAll = 'הצג הכל'
+  filteringBy = undefined
 
   @ViewChild('businessFilter') businessFilter
   @ViewChild('restaurantFilter') restaurantFilter
@@ -85,6 +86,9 @@ export class Page2Page {
   setRestaurantTypes(value) {
     // console.log(this.restaurantFilter.selectOptions)
     // console.log(this.restaurantFilter.value)
+    if(this.filteringBy === 'business') return
+    this.filteringBy = 'restaurant'
+    this.businessFilter.value = this.toShowAll
     let selected = value
     for (let i = 0; i < this.result.length; i++) {
       this.result[i].showOnScreen = true
@@ -93,11 +97,14 @@ export class Page2Page {
         this.result[i].showOnScreen = false
       }
     }
-    this.businessFilter.value = this.toShowAll
+    this.filteringBy = undefined
   }
 
   //this function is called once the user has selected a type of business filter
   setBusinessTypes(value) {
+    if(this.filteringBy === 'restaurant') return
+    this.filteringBy = 'business'
+    this.restaurantFilter.value = this.toShowAll
     let selected = value
     for (let i = 0; i < this.result.length; i++) {
       this.result[i].showOnScreen = true
@@ -106,7 +113,7 @@ export class Page2Page {
         this.result[i].showOnScreen = false
       }
     }
-    this.restaurantFilter.value = this.toShowAll
+    this.filteringBy = undefined
   }
 
   // this function return true if the 2nd argument is in the array
