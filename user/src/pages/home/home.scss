@@ -20,9 +20,16 @@ page-home {
         width: 70%;
         padding-top: 10px;
         direction: rtl;
+        border-radius: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 16px;
         border: 2px solid rgb(67, 182, 235);
-
+        background-color: white;
     }  
+
+    
+
     #fixText{
         color: #ea6153;
         text-align: center;

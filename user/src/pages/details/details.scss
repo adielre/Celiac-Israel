@@ -3,3 +3,25 @@ page-details {
         text-decoration-color: blue;
     }
 }
+
+* {
+    font-size: 16px;
+}
+
+img {
+    padding-bottom: 30px;
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.dataRow {
+    border-bottom: 0.1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

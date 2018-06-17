@@ -9,25 +9,25 @@
 
 <ion-content padding>
 
-  <ion-item>
+  <ion-item class='filterField'>
     <ion-label>סינון לפי סוג עסק</ion-label>
     <ion-select #businessFilter (ionChange)='setBusinessTypes($event)'>
       <ion-option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</ion-option>
     </ion-select>
   </ion-item>
 
-  <ion-item>
+  <ion-item class='filterField'>
     <ion-label>סינון לפי סוג מסעדה</ion-label>
     <ion-select #restaurantFilter (ionChange)='setRestaurantTypes($event)'>
       <ion-option *ngFor='let restaurantType of restaurantTypes' value='{{restaurantType.value}}'>{{restaurantType.name}}</ion-option>
     </ion-select>
   </ion-item>
 
-  <ion-grid *ngFor='let res of result'>
+  <!-- <ion-grid *ngFor='let res of result'>
     <div *ngIf='res.showOnScreen'>
       <ion-row>
         <ion-col col-2>
-          <!-- <img src={{res.links.logo}} (touchend)= "goToSite(res)"   > -->
+          <!-- <img src={{res.links.logo}} (touchend)= "goToSite(res)"   >
           <img (click)="move(res)" src={{res.links.logo}}>
         </ion-col>
         <ion-col col-3>
@@ -43,10 +43,60 @@
         </ion-col>
       </ion-row>
     </div>
-  </ion-grid>
+  </ion-grid> -->
 
 
 
-  <button ion-button outline (click)="popThis()">חזור אחורה</button>
-  <p>לחץ על תמונה כדי להציג את הפרטים שלה</p>
+
+  <ion-card class='wholeCard' *ngFor='let res of result' (click)="move(res)">
+
+
+    <div *ngIf='res.showOnScreen'>
+      <ion-card-header class='cardHeader'>
+        <b>{{res.namePlace}}</b>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <img class='cardImage' src={{res.links.logo}}>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>
+                  <b>טלפון:</b> {{res.phone}}</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>
+                  <b>שעות פתיחה: </b>{{res.opening}}</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label>
+                  <b>כתובת: </b>{{res.Address}}</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </div>
+
+
+  </ion-card>
+
+
+
+
+  <!-- <button ion-button outline (click)="popThis()">חזור אחורה</button> -->
+  <!-- <p>לחץ על תמונה כדי להציג את הפרטים שלה</p> -->
 </ion-content>

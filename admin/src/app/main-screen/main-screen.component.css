@@ -39,3 +39,7 @@
 .upperContainer .col {
     text-align: center;
 }
+
+.placeHolder {
+    height: 65px;
+}
