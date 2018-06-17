@@ -19,8 +19,15 @@
 
   <ion-grid *ngIf='res!=undefined'>
 
-      <img src={{res.links.logo}}>
-    <ion-row class='dataRow'>
+    <ion-row *ngIf='res.links.logo'>
+      <ion-col class='flexCol'>
+        <img src={{res.links.logo}}>
+      </ion-col>
+    </ion-row>
+
+
+
+    <ion-row class='dataRow' *ngIf='res.opening'>
       <ion-col>
         שעות פתיחה:
       </ion-col>
@@ -31,7 +38,7 @@
 
 
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.phone'>
       <ion-col>
         טלפון:
       </ion-col>
@@ -40,7 +47,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.Address'>
       <ion-col>
         כתובת:
       </ion-col>
@@ -49,7 +56,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.priceRange'>
       <ion-col>
         טווח מחירים:
       </ion-col>
@@ -60,7 +67,7 @@
 
 
     <div *ngIf='res.linksUrl!=undefined'>
-      <ion-row>
+      <ion-row class='dataRow' *ngIf='res.linksUrl.website'>
         <ion-col>
           כתובת אתר אינטרנט:
         </ion-col>
@@ -68,7 +75,7 @@
           {{res.linksUrl.website}}
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row class='dataRow' *ngIf='res.linksUrl.facebook'>
         <ion-col>
           פייסבוק:
         </ion-col>
@@ -78,7 +85,7 @@
       </ion-row>
     </div>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.email'>
       <ion-col>
         אימייל:
       </ion-col>
@@ -87,7 +94,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.Description'>
       <ion-col>
         תיאור:
       </ion-col>
@@ -96,7 +103,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.moreInfo'>
       <ion-col>
         מידע נוסף:
       </ion-col>
@@ -105,7 +112,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row>
+    <ion-row class='dataRow' *ngIf='res.sensitivePreferences.preferences'>
       <ion-col>
         העדפות נוספות:
       </ion-col>

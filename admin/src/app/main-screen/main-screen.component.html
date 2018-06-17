@@ -1,20 +1,53 @@
-
 <div class="container upperContainer">
 
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">צליאק ישראל</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/edit-screen">הוסף מסעדה
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/add-admin">הוסף משתמש</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logout()" routerLink="/login">צא מהמערכת</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <div class='placeHolder'></div>
+<!-- 
     <div class="row">
 
-            <div class="col">
-                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/edit-screen">הוסף מסעדה</button>
-            </div>
-            <div class="col">
-                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" routerLink="/login">צא מהמערכת</button>
-            </div>
-            <div class="col">
-                    <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/add-admin">הוסף משתמש</button>
-            </div>
+        <div class="col">
+            <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/edit-screen">הוסף מסעדה</button>
+        </div>
+        <div class="col">
+            <button mat-fab type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" routerLink="/login">צא מהמערכת</button>
+        </div>
+        <div class="col">
+            <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/add-admin">הוסף משתמש</button>
+        </div>
 
- 
-    </div>
+
+    </div> -->
 
     <div class="row">
 
@@ -31,7 +64,7 @@
             <div class="form-group">
                 <label>סינון לפי סוג עסק:</label>
                 <select class="form-control" (change)='setTypeFilter($event)'>
-                        <option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</option>
+                    <option *ngFor='let businessType of businessTypes' value='{{businessType.value}}'>{{businessType.name}}</option>
                 </select>
             </div>
         </div>
@@ -66,8 +99,7 @@
                 <mat-list>
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
                     <mat-divider></mat-divider>
-                    <mat-list-item>עיר
-                        : {{rest.city}}</mat-list-item>
+                    <mat-list-item>עיר : {{rest.city}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item *ngIf="rest.phone!=''">טלפון: {{rest.phone}}</mat-list-item>
                     <mat-divider></mat-divider>

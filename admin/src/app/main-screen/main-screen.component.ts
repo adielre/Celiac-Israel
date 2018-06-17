@@ -95,7 +95,7 @@ export class MainScreenComponent implements OnInit {
   openDialog(item): void {
     let dialogRef = this.dialog.open(MainScreenPopupComponent, {
       width: '250px',
-      data: {}
+      data: {originalComponent: this}
     });
     dialogRef.componentInstance.id = item.id;
     dialogRef.afterClosed().subscribe(result => {
@@ -124,8 +124,8 @@ export class MainScreenPopupComponent {
 
   delete() {
     this.fbService.delete(this.id)
+    this.data.originalComponent.restaurants = this.data.originalComponent.restaurants.filter(res => res.id !== this.id)
     this.dialogRef.close();
-
   }
 
 

@@ -17,7 +17,7 @@ import { LoginComponent } from './login/login.component'
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import {MatDialogModule, MatDialog, MatToolbarModule} from '@angular/material/dialog';
 
 
 
