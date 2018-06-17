@@ -2,57 +2,79 @@
 
 import { Injectable } from '@angular/core';
 import { FirebaseDatabase } from '@firebase/database-types';
+import { Restaurant } from '../Restaurant';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Injectable()
 export class FirebaseService {
 
-  private firebase = window['firebase']
-  private firestore = this.firebase.firestore()
-  private firestoreFieldValues = this.firebase.firestore.FieldValue
-
-  constructor() {
-    if (this.firebase == null) {
-      throw ('Missing firebase on window object!')
-    }
+  // private firebase = window['firebase']
+  // private firestore = this.firebase.firestore()
+  // private firestoreFieldValues = this.firebase.firestore.FieldValue
+  isRestLoad = false;
+  restArr = [];
+  constructor(private fb: AngularFirestore) {
+    // if (this.firebase == null) {
+    //   throw ('Missing firebase on window object!')
+    // }
   }
 
-  createUserWithEmailAndPassword(email: string, password: string): Promise<any> {
-    return this.firebase.auth().createUserWithEmailAndPassword(email, password)
+  getAllRestaurant() {
+    return new Promise((resolve, reject) => {
+      if (!this.isRestLoad) {
+        this.fb.collection('resturant').snapshotChanges().subscribe(res => {
+          const tmp = res.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+          this.isRestLoad = true;
+          this.restArr = tmp;
+          resolve(this.restArr);
+        });
+      }
+      else
+        resolve(this.restArr);
+    });
   }
 
-  loginUserWithEmailAndPassword(email: string, password: string): Promise<any> {
-    return this.firebase.auth().signInWithEmailAndPassword(email, password)
-  }
+  delete(ID: string) {
+    this.fb.doc('resturant/' + ID).delete();
 
-  userLogout() {
-    return this.firebase.auth().signOut()
   }
+  // createUserWithEmailAndPassword(email: string, password: string): Promise<any> {
+  //   return this.firebase.auth().createUserWithEmailAndPassword(email, password)
+  // }
 
-  setDataInFirestore(collection: string, document: string, data: object): Promise<any> {
-    return this.firestore.collection(collection).doc(document).set(Object.assign({}, data))
-  }
+  // loginUserWithEmailAndPassword(email: string, password: string): Promise<any> {
+  //   return this.firebase.auth().signInWithEmailAndPassword(email, password)
+  // }
 
-  updateDataInFirestore(collection: string, document: string, data: object): Promise<any> {
-    return this.firestore.collection(collection).doc(document).update(Object.assign({}, data))
-  }
+  // userLogout() {
+  //   return this.firebase.auth().signOut()
+  // }
 
-  deleteDocumentFromFirestore(collection: string, document: string): Promise<any> {
-    return this.firestore.collection(collection).doc(document).delete()
-  }
+  // setDataInFirestore(collection: string, document: string, data: object): Promise<any> {
+  //   return this.firestore.collection(collection).doc(document).set(Object.assign({}, data))
+  // }
 
-  deleteFieldFromDocumentFirestore(collection: string, document: string, field: string): Promise<any> {
-    return this.firestore.collection(collection).doc(document).update({ [field]: this.firestoreFieldValues.delete() })
-  }
+  // updateDataInFirestore(collection: string, document: string, data: object): Promise<any> {
+  //   return this.firestore.collection(collection).doc(document).update(Object.assign({}, data))
+  // }
 
-  queryFirestore(): FirestoreQuery {
-    return new FirestoreQuery(this.firestore)
-  }
+  // deleteDocumentFromFirestore(collection: string, document: string): Promise<any> {
+  //   return this.firestore.collection(collection).doc(document).delete()
+  // }
 
-  delete(ID : string)
-   {
-    this.firestore.collection('resturant').doc().delete();
-     
-   }
+  // deleteFieldFromDocumentFirestore(collection: string, document: string, field: string): Promise<any> {
+  //   return this.firestore.collection(collection).doc(document).update({ [field]: this.firestoreFieldValues.delete() })
+  // }
+
+  // queryFirestore(): FirestoreQuery {
+  //   return new FirestoreQuery(this.firestore)
+  // }
+
+  
 
 }
 
@@ -173,9 +195,8 @@ class FirestoreQuery {
   }
 
 
-  
+
 
 }
 
-  
-  
+

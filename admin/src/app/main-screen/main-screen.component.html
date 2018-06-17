@@ -44,10 +44,10 @@
 <div class="container">
 
     <mat-accordion *ngFor='let rest of restaurants'>
-        <mat-expansion-panel *ngIf='rest.showOnScreen'>
+        <mat-expansion-panel *ngIf='rest.showOnScreen && rest'>
             <mat-expansion-panel-header>
 
-                <button mat-raised-button (click)="openDialog()" class="btn btn-outline-primary btn-primary" id="trash">
+                <button mat-raised-button (click)="openDialog(rest)" class="btn btn-outline-primary btn-primary" id="trash">
                     <i class="fa fa-trash"></i>
                 </button>
 
