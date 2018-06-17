@@ -33,7 +33,7 @@
 
 
     <div class='placeHolder'></div>
-<!-- 
+    <!-- 
     <div class="row">
 
         <div class="col">
@@ -84,8 +84,12 @@
                     <i class="fa fa-trash"></i>
                 </button>
 
-                <button type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="save()">
+                <button *ngIf=!isEdit type="button" id="pencle" class="btn btn-outline-primary btn-primary" (click)="edit(rest)">
                     <i class="fas fa-pencil-alt"></i>
+                </button>
+
+                <button *ngIf="isEdit && idEdit == rest.id" type="button" class="btn btn-outline-primary btn-primary" (click)="save(rest)">
+                    <i class="fas fa-save"></i>
                 </button>
 
                 <mat-panel-title>
@@ -96,7 +100,7 @@
                 </mat-panel-description>
             </mat-expansion-panel-header>
             <div class='content'>
-                <mat-list>
+                <mat-list *ngIf="!isEdit">
                     <mat-list-item>כתובת: {{rest.address}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>עיר : {{rest.city}}</mat-list-item>
@@ -144,7 +148,11 @@
 
 
                 </mat-list>
-
+                <div *ngIf=isEdit>
+                    <div>
+                        <input *ngFor="let item of toArray(rest)" [placeholder]="item | TranslatePipe" [(ngModel)]="rest[item]">
+                    </div>
+                </div>
 
 
             </div>

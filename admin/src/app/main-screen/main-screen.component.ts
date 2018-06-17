@@ -18,7 +18,9 @@ export class MainScreenComponent implements OnInit {
   restaurants: Array<Restaurant> = []
   toShowAll = 'הצג הכל'
   // filter array
-  locations = []
+  locations = [];
+  public isEdit:boolean =  false;
+  idEdit = ""
 
   businessTypes = []
 
@@ -103,6 +105,28 @@ export class MainScreenComponent implements OnInit {
     });
 
   }
+
+  toArray(item){
+    const arr = [];
+    for(let key in item){
+      arr.push(key)
+    }
+    return arr;
+  }
+
+  toObject(arr){
+
+  }
+
+  edit(item) {
+    this.isEdit = true;
+    this.idEdit = item.id 
+  }
+
+  save(item){
+    this.firebaseService.save(item);
+    this.isEdit = false
+  }
 }
 
 
@@ -128,11 +152,7 @@ export class MainScreenPopupComponent {
     this.dialogRef.close();
   }
 
-  edit() {
-    
-
-
-  }
+  
 
 
 }

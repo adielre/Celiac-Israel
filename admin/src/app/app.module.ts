@@ -17,7 +17,8 @@ import { LoginComponent } from './login/login.component'
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule, MatDialog, MatToolbarModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import {MatToolbarModule} from "@angular/material/toolbar"
 
 
 
@@ -35,6 +36,8 @@ import {MatListModule} from '@angular/material/list';
 import { EditComponent } from './edit/edit.component';
 import {AuthGuardService} from './servises/auth-guard.service';
 import { AddAdminComponent } from './add-admin/add-admin.component'
+import { CommonModule } from '@angular/common';
+import { TranslatePipe } from './transform.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import { AddAdminComponent } from './add-admin/add-admin.component'
     MainScreenComponent,
     MainScreenPopupComponent,
     EditComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    TranslatePipe
     
   ],
   entryComponents: [MainScreenPopupComponent],
@@ -62,7 +66,8 @@ import { AddAdminComponent } from './add-admin/add-admin.component'
     ReactiveFormsModule,
     MatDialogModule,
     //MatIconModule,
-    RouterModule.forRoot(routing)
+    RouterModule.forRoot(routing),
+    CommonModule
 
   ],
  

@@ -40,7 +40,12 @@ export class FirebaseService {
 
   delete(ID: string) {
     this.fb.doc('resturant/' + ID).delete();
+  }
 
+  save(item){
+    const id = item.id;
+    delete item.id;
+    this.fb.doc('resturant/' + id).update(JSON.parse(JSON.stringify(item)));
   }
   // createUserWithEmailAndPassword(email: string, password: string): Promise<any> {
   //   return this.firebase.auth().createUserWithEmailAndPassword(email, password)
