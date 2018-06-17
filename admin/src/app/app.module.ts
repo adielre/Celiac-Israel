@@ -17,8 +17,10 @@ import { LoginComponent } from './login/login.component'
 //bootstrap import
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import {MatDialogModule, MatDialog } from '@angular/material/dialog';
 import {MatToolbarModule} from "@angular/material/toolbar"
+
+
 
 
 
@@ -39,6 +41,7 @@ import { AddAdminComponent } from './add-admin/add-admin.component'
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from './transform.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,7 @@ import { TranslatePipe } from './transform.pipe';
     EditComponent,
     AddAdminComponent,
     TranslatePipe
+    
     
   ],
   entryComponents: [MainScreenPopupComponent],
