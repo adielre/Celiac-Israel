@@ -4,6 +4,7 @@ import { Pipe, PipeTransform } from "@angular/core"
 export class TranslatePipe implements PipeTransform {
     transform(value): number {
         
+        
         const keys= {
             name: 'שם',
             address: 'כתובת',
