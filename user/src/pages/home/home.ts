@@ -48,6 +48,12 @@ export class HomePage {
           this.loadPage2=0;
         } else {
           //alert(this.result)
+          /*
+          for (let i = 0; i < this.result.length; i++){
+            res[i]['showOnScreen']= true;
+          }
+          */
+         
           this.navCtrl.push(Page2Page, { result: res });
           this.loadPage2=0;
         }

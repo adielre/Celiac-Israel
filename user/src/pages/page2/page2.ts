@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FilterPage } from '../filter/filter';
 import { DetailsPage } from '../details/details';
@@ -19,6 +19,9 @@ export class Page2Page {
   restaurantTypes = []
   businessTypes = []
   toShowAll = 'הצג הכל'
+
+  @ViewChild('businessFilter') businessFilter
+  @ViewChild('restaurantFilter') restaurantFilter
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -45,8 +48,13 @@ export class Page2Page {
     if (this.result == null) {
       alert("STOP")
     } else {
+      for (let i = 0; i < this.result.length; i++) {
+        this.result[i].showOnScreen = true
+      }
       this.fillFilterArrays()
     }
+    this.restaurantFilter.setValue(this.toShowAll)
+    this.businessFilter.setValue(this.toShowAll)
   }
 
   /**
@@ -63,7 +71,7 @@ export class Page2Page {
     this.businessTypes.push({ name: this.toShowAll, value: this.toShowAll })
     for (let i = 0; i < this.result.length; i++) {
       let businessType = this.result[i].TypeOfBusiness
-      let restaurantType = this.result[i].restaurantType
+      let restaurantType = this.result[i].restauranttype
       if (businessType != null && businessType.trim().length > 0 && this.toInclude(this.result, businessType.trim())) {
         this.businessTypes.push({ name: businessType, value: businessType })
       }
@@ -71,6 +79,34 @@ export class Page2Page {
         this.restaurantTypes.push({ name: restaurantType, value: restaurantType })
       }
     }
+  }
+
+  //this function is called once the user has selected a location filter
+  setRestaurantTypes(value) {
+    // console.log(this.restaurantFilter.selectOptions)
+    // console.log(this.restaurantFilter.value)
+    let selected = value
+    for (let i = 0; i < this.result.length; i++) {
+      this.result[i].showOnScreen = true
+      if (selected == this.toShowAll) continue// continue  for the next iter
+      if (this.result[i].restauranttype.trim() != selected.trim()) {
+        this.result[i].showOnScreen = false
+      }
+    }
+    this.businessFilter.value = this.toShowAll
+  }
+
+  //this function is called once the user has selected a type of business filter
+  setBusinessTypes(value) {
+    let selected = value
+    for (let i = 0; i < this.result.length; i++) {
+      this.result[i].showOnScreen = true
+      if (selected == this.toShowAll) continue// continue  for the next iter
+      if (this.result[i].TypeOfBusiness.trim() != selected.trim()) {
+        this.result[i].showOnScreen = false
+      }
+    }
+    this.restaurantFilter.value = this.toShowAll
   }
 
   // this function return true if the 2nd argument is in the array
