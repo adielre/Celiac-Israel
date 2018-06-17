@@ -128,6 +128,12 @@ export class MainScreenPopupComponent {
 
   }
 
+  edit() {
+    
+
+
+  }
+
 
 }
 
