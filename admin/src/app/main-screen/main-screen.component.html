@@ -2,13 +2,13 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#" routerLink="/main-screen">צליאק ישראל</a>
-        <button class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" routerLink="/edit-screen">הוסף מסעדה
                         <span class="sr-only">(current)</span>
                     </a>
@@ -106,37 +106,37 @@
                     <mat-list-item>עיר : {{rest.city}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item *ngIf="rest.phone!=''">טלפון: {{rest.phone}}</mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.phone!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.email!=''">אימל: {{rest.email}}</mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.email!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.lastmodi!=''">תאריך עדכון אחרון: {{rest.lastmodi}}</mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.lastmodi!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.openingTime!=''">שעות פתיחה: {{rest.openingTime}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.openingTime!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.priceRange!=''">טווח מחירים: {{rest.priceRange}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.priceRange!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.restauranttype!=''">סוג מסעדה: {{rest.restauranttype}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.restauranttype!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.TypeOfBusiness!=''">סוג עסק: {{rest.TypeOfBusiness}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.TypeOfBusiness!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.moreInformation!=''">מידע נוסף: {{rest.moreInformation}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.moreInformation!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.additionalPreferences!=''">העדפות נוספות: {{rest.additionalPreferences}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.additionalPreferences!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.sensitivePreferences!=''">רגישויות נוספות: {{rest.sensitivePreferences}} </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.sensitivePreferences!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.facilities!=''">מתקנים:{{rest.facilities}}</mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.facilities!=''"></mat-divider>
                     <mat-list-item *ngIf="rest.website!=''"> מעבר לאתר האינטרנט
                         <pre> </pre>
                         <a href="{{rest.website}}"> לחץ כאן </a>
                     </mat-list-item>
-                    <mat-divider> </mat-divider>
+                    <mat-divider *ngIf="rest.website!=''"> </mat-divider>
                     <mat-list-item *ngIf="rest.facebook!=''">מעבר לפייסבוק
                         <pre> </pre>
                         <a href="{{rest.facebook}}">לחץ כאן</a>
                     </mat-list-item>
-                    <mat-divider></mat-divider>
+                    <mat-divider *ngIf="rest.facebook!=''"></mat-divider>
                     <mat-list-item>כשר: {{rest.kosher}}</mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item>נגישות: {{rest.accessibility}}</mat-list-item>
@@ -161,3 +161,6 @@
     </mat-accordion>
 
 </div>
+
+
+<app-loading *ngIf='isLoading'></app-loading>

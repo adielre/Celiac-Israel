@@ -19,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FirebaseService } from './firebase-service/firebase.service';
 
+
+
 //validation
 //import { Validators } from '@angular/forms';
 

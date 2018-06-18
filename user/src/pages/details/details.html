@@ -25,7 +25,14 @@
       </ion-col>
     </ion-row>
 
-
+    <ion-row class='dataRow' *ngIf='res.Description'>
+        <ion-col>
+          תיאור:
+        </ion-col>
+        <ion-col>
+          {{res.Description}}
+        </ion-col>
+      </ion-row>
 
     <ion-row class='dataRow' *ngIf='res.opening'>
       <ion-col>
@@ -66,21 +73,22 @@
     </ion-row>
 
 
-    <div *ngIf='res.linksUrl!=undefined'>
-      <ion-row class='dataRow' *ngIf='res.linksUrl.website'>
+    <div *ngIf='res.links!=undefined'>
+      <ion-row class='dataRow' *ngIf='res.links.website'>
         <ion-col>
           כתובת אתר אינטרנט:
         </ion-col>
         <ion-col>
-          {{res.linksUrl.website}}
+          <a href="{{res.links.website}}"> לחץ כאן </a>
         </ion-col>
       </ion-row>
-      <ion-row class='dataRow' *ngIf='res.linksUrl.facebook'>
+      <ion-row class='dataRow' *ngIf='res.links.facebook'>
         <ion-col>
           פייסבוק:
         </ion-col>
         <ion-col>
-          {{res.linksUrl.facebook}}
+            <a href="{{res.links.facebook}}"> לחץ כאן </a>
+         
         </ion-col>
       </ion-row>
     </div>
@@ -89,19 +97,12 @@
       <ion-col>
         אימייל:
       </ion-col>
-      <ion-col>
-        {{res.email}}
+      <ion-col>        
+        <a href="{{res.email}}"> לחץ כאן </a>
       </ion-col>
     </ion-row>
 
-    <ion-row class='dataRow' *ngIf='res.Description'>
-      <ion-col>
-        תיאור:
-      </ion-col>
-      <ion-col>
-        {{res.Description}}
-      </ion-col>
-    </ion-row>
+
 
     <ion-row class='dataRow' *ngIf='res.moreInfo'>
       <ion-col>
@@ -112,62 +113,76 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class='dataRow' *ngIf='res.sensitivePreferences.preferences'>
+    <ion-row class='dataRow' *ngIf='res.restauranttype'>
       <ion-col>
-        העדפות נוספות:
+       סוג מסעדה:
       </ion-col>
       <ion-col>
-        {{res.sensitivePreferences.preferences}}
+        {{res.restauranttype}}
       </ion-col>
     </ion-row>
+
+    <ion-row class='dataRow' *ngIf='res.facilities'>
+      <ion-col>
+       מתקנים:
+      </ion-col>
+      <ion-col>
+        {{res.facilities}}
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class='dataRow' *ngIf='res.sensitivePreferences.preferences'>
+        <ion-col>
+         העדפות נוספות:
+        </ion-col>
+        <ion-col>
+          {{res.sensitivePreferences.preferences}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row class='dataRow' *ngIf='res.sensitivePreferences.sensitivity'>
+          <ion-col>
+           רגשויות נוספות :
+          </ion-col>
+          <ion-col>
+            {{res.sensitivePreferences.sensitivity}}
+          </ion-col>
+        </ion-row>
+
+        <ion-row class='dataRow' >
+            <ion-col>
+            תפריט ללא גלוטן :
+            </ion-col>
+            <ion-col>
+              {{res.sensitivePreferences.gfMenu}}
+            </ion-col>
+          </ion-row>
+
+        <ion-row class='dataRow' >
+            <ion-col>
+             כושר :
+            </ion-col>
+            <ion-col>
+              {{res.sensitivePreferences.kosher}}
+            </ion-col>
+          </ion-row>
+          
+        <ion-row class='dataRow' >
+            <ion-col>
+             נגישות :
+            </ion-col>
+            <ion-col>
+              {{res.sensitivePreferences.accessibility}}
+            </ion-col>
+          </ion-row>
+        
+
 
   </ion-grid>
 
 
 
 
-  <!-- <div *ngIf='res!=undefined'>
-
-    <img src={{res.links.logo}}>
-    <br/> שעות פתיחה: {{res.opening }}
-    <br/> טלפון: {{res.phone}}
-    <br/> כתובת: {{res.Address}}
-    <br/> טווח מחירים: {{res.priceRange}}
-    <div *ngIf='res.linksUrl!=undefined'>
-      <br/> כתובת אתר אינטרנט: {{res.linksUrl.website}}
-      <br/> פייסבוק: {{res.linksUrl.facebook}}
-    </div>
-
-    <br/> אימל: {{res.email}}
-    <br/>
-
-    סוג מזון:
-        {{res.typeDishes}}
-        <br/>
-    תיאור חופשי: {{res.Description}}
-    <br/> מידע נוסף: {{res.moreInfo}}
-    <br/> העדפות נוספות: {{res.sensitivePreferences.preferences}}
-
-           <ion-row>
-            <ion-col col-2 >
-             <img  src={{res.links.logo}}>
-            </ion-col>
-            <ion-col col-3 >
-              {{res.namePlace}}
-             </ion-col>
-             <ion-col col-6 >
-             שעות פתיחה:
-             {{res.opening }}
-      
-             <br>
-             טלפון:
-             {{res.phone}}
-             </ion-col>
-             <ion-col col-1 >
-              <img src="assets/imgs/place-icon.png">
-             </ion-col>
-          </ion-row>
-  </div>-->
 
 
 </ion-content>

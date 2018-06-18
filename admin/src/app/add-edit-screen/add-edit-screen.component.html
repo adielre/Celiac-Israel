@@ -26,7 +26,7 @@
 
 
 <div class="container">
-  <h1 class="row">הוספת או עריכת מקום</h1>
+  <h1 id ="header-text" class="row">הוספת או עריכת מקום</h1>
   <div class="row">
     <div class="labels col-2" >
       *שם המקום:
@@ -227,9 +227,7 @@
 
 
 <div class="col-12 text-center"> 
-    <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/main-screen">Save</button> 
+    <button type="button" id='save-button' class="btn btn-outline-primary btn-primary"(click)="save()">שמור</button> 
 </div>
 
-<div class="col-12 text-center">
-  <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
-</div>
+<app-loading *ngIf='isLoading'></app-loading>
