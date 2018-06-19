@@ -1,5 +1,32 @@
+<div class="container upperContainer">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" routerLink="/main-screen" >צליאק ישראל</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+              <a class="nav-link" routerLink="/edit-screen">הוסף מסעדה
+                  <span class="sr-only">(current)</span>
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/add-admin">הוסף משתמש</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" (click)="logout()" routerLink="/login">צא מהמערכת</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+
+
+
 <div class="container">
-  <h1 class="row">הוספת או עריכת מקום</h1>
+  <h1 id ="header-text" class="row">הוספת או עריכת מקום</h1>
   <div class="row">
     <div class="labels col-2" >
       *שם המקום:
@@ -200,9 +227,7 @@
 
 
 <div class="col-12 text-center"> 
-    <button type="button" class="btn btn-outline-primary btn-primary"(click)="save()" routerLink="/main-screen">Save</button> 
+    <button type="button" id='save-button' class="btn btn-outline-primary btn-primary"(click)="save()">שמור</button> 
 </div>
 
-<div class="col-12 text-center">
-  <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">חזור למסך הראשי</button>
-</div>
+<app-loading *ngIf='isLoading'></app-loading>

@@ -71,8 +71,8 @@ export class Page2Page {
     this.restaurantTypes.push({ name: this.toShowAll, value: this.toShowAll })
     this.businessTypes.push({ name: this.toShowAll, value: this.toShowAll })
     for (let i = 0; i < this.result.length; i++) {
-      let businessType = this.result[i].TypeOfBusiness
-      let restaurantType = this.result[i].restauranttype
+      let businessType = this.result[i].TypeOfBusiness.trim()
+      let restaurantType = this.result[i].restauranttype.trim()
       if (businessType != null && businessType.trim().length > 0 && this.toInclude(this.result, businessType.trim())) {
         this.businessTypes.push({ name: businessType, value: businessType })
       }
@@ -89,7 +89,7 @@ export class Page2Page {
     if(this.filteringBy === 'business') return
     this.filteringBy = 'restaurant'
     this.businessFilter.value = this.toShowAll
-    let selected = value
+    let selected = value.trim()
     for (let i = 0; i < this.result.length; i++) {
       this.result[i].showOnScreen = true
       if (selected == this.toShowAll) continue// continue  for the next iter
@@ -105,7 +105,7 @@ export class Page2Page {
     if(this.filteringBy === 'restaurant') return
     this.filteringBy = 'business'
     this.restaurantFilter.value = this.toShowAll
-    let selected = value
+    let selected = value.trim()
     for (let i = 0; i < this.result.length; i++) {
       this.result[i].showOnScreen = true
       if (selected == this.toShowAll) continue// continue  for the next iter
