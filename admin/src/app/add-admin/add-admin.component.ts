@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '..//servises/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../servises/auth.service';
 
 @Component({
   selector: 'app-add-admin',
@@ -26,6 +26,9 @@ export class AddAdminComponent implements OnInit {
       this.email = this.password = '';
     })
 
+  }
+  logout() {
+    this.authService.logout();
   }
   ngOnInit() {
   }

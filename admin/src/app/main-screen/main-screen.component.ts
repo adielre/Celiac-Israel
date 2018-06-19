@@ -25,7 +25,7 @@ export class MainScreenComponent implements OnInit {
 
   businessTypes = []
 
-  constructor(private firebase: AngularFirestore, private firebaseService: FirebaseService, public dialog: MatDialog) { }
+  constructor(public authService: AuthService, private firebase: AngularFirestore, private firebaseService: FirebaseService, public dialog: MatDialog) { }
 
   ngOnInit() {
     // display resturant.
@@ -129,6 +129,9 @@ export class MainScreenComponent implements OnInit {
   save(item){
     this.firebaseService.save(item);
     this.isEdit = false
+  }
+  logout() {
+    this.authService.logout();
   }
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
+import { AuthService } from '../servises/auth.service';
 
 @Component({
   selector: 'app-add-edit-screen',
@@ -11,7 +12,7 @@ export class AddEditScreenComponent implements OnInit {
   title = 'app';
   isLoading = false;
   public resColl
-  constructor(private afs: AngularFirestore, private router: Router){
+  constructor(public authService: AuthService,private afs: AngularFirestore, private router: Router){
      
   } 
 
@@ -80,6 +81,9 @@ public save(){
   }
   ngOnInit() {
     this.resColl = this.afs.collection("resturant");
+  }
+  logout() {
+    this.authService.logout();
   }
 }
 
