@@ -60,7 +60,7 @@ Please visit our wiki for furthur project info:
 ### [Team Page](../../wiki/team)
 ### [Product Page](../../wiki/ProductPage)
 ### [Inception ](../../wiki/Inception)
-### [User Manual](../../wiki/user-manual) (empty for now)
+### [User Manual](../../wiki/user-manual) 
 
 
 ### Main task board
