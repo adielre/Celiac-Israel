@@ -8,13 +8,9 @@ import { AddAdminComponent } from "./add-admin/add-admin.component";
 
 export const routing: Routes = [
     { path: "", redirectTo: "login", pathMatch: "full" },
-    { path: "login", component: LoginComponent },
-    // { path: "edit-screen", component: AddEditScreenComponent },
-    // { path: "main-screen", component: MainScreenComponent },
-    // { path: "edit:id", component:EditComponent },
-   
+    { path: "login", component: LoginComponent },   
     { path: "edit-screen", component: AddEditScreenComponent, canActivate: [AuthGuardService]},
     { path: "main-screen", component: MainScreenComponent, canActivate: [AuthGuardService]},
     { path: "add-admin", component: AddAdminComponent, canActivate: [AuthGuardService]},
     { path: "popup", component: MainScreenPopupComponent }
-]   
+    ]   

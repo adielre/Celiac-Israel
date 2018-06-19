@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { Restaurant } from '../Restaurant';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -15,6 +15,7 @@ import { AuthService } from '../servises/auth.service';
 })
 export class MainScreenComponent implements OnInit {
 
+  isLoading = false
   restaurants: Array<Restaurant> = []
   toShowAll = 'הצג הכל'
   // filter array
@@ -28,11 +29,13 @@ export class MainScreenComponent implements OnInit {
 
   ngOnInit() {
     // display resturant.
+    this.isLoading = true
     this.firebaseService.getAllRestaurant().then((res: any[]) => {
       for (let i = 0; i < res.length; i++) {
         this.restaurants.push(new Restaurant(res[i]))
       }
       this.fillFilterArrays()
+      this.isLoading = false
     })
     // this.firebase.collection('resturant').valueChanges()
     //   .subscribe(
@@ -45,11 +48,11 @@ export class MainScreenComponent implements OnInit {
   //----------------------------------------------------------------------------
   //this function is called once the user has selected a location filter
   setLocationFilter(event) {
-    let selected = event.target.value // on howm the even accure
+    let selected = event.target.value.trim() // on howm the even accure
     for (let i = 0; i < this.restaurants.length; i++) {
       this.restaurants[i].showOnScreen = true
       if(selected == this.toShowAll) continue// continue  for the next iter
-      if(this.restaurants[i].city != selected) {
+      if(this.restaurants[i].city.trim() != selected.trim()) {
           this.restaurants[i].showOnScreen = false
       }
     }
@@ -57,11 +60,11 @@ export class MainScreenComponent implements OnInit {
 
   //this function is called once the user has selected a type of business filter
   setTypeFilter(event) {
-    let selected = event.target.value // on howm the even accure
+    let selected = event.target.value.trim() // on howm the even accure
     for (let i = 0; i < this.restaurants.length; i++) {
       this.restaurants[i].showOnScreen = true
       if (selected == this.toShowAll) continue// continue  for the next iter
-      if (this.restaurants[i].TypeOfBusiness != selected) {
+      if (this.restaurants[i].TypeOfBusiness.trim() != selected.trim()) {
         this.restaurants[i].showOnScreen = false
       }
     }
@@ -72,8 +75,8 @@ export class MainScreenComponent implements OnInit {
     this.locations.push({name: this.toShowAll, value: this.toShowAll})
     this.businessTypes.push({name: this.toShowAll, value: this.toShowAll})
     for(let i = 0 ; i < this.restaurants.length ; i++) {
-      let city = this.restaurants[i].city
-      let type = this.restaurants[i].TypeOfBusiness
+      let city = this.restaurants[i].city.trim()
+      let type = this.restaurants[i].TypeOfBusiness.trim()
       if (city != null && city.trim().length > 0 && this.toInclude(this.locations, city.trim())) {
         this.locations.push({ name: city, value: city })
       }

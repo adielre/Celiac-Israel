@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
+  isLoading = false
 
 constructor(public authService: AuthService, public router: Router) {}
 
@@ -32,12 +33,15 @@ constructor(public authService: AuthService, public router: Router) {}
     .catch((err) => console.log('error: ' + err));*/
     //routerLink="/main-screen"
     // this.authService.login(this.email, this.password);
+    this.isLoading = true
     this.authService.login(this.email, this.password)
     .then(value => {
+      this.isLoading = false
       this.authService.userLoggin = true;
       this.router.navigate(['/main-screen']);
     })
     .catch(err => {
+      this.isLoading = false
       alert("שם משתמש או ססמא שגויים"); 
       this.authService.userLoggin = false;
       this.email = this.password = '';

@@ -1,46 +1,15 @@
 <img id="logo" src="assets\logo.png">
 
-
-<div *ngIf="authService.user | async">
-  <!--<h4>Welcome {{ (authService.user | async)?.email }}!</h4>
-  
-    <div class="col-12 text-center">
-      <button mat-fab type="button" class="btn btn-outline-primary btn-primary" routerLink="/main-screen">עבור למסך הבית</button>
-    </div>
-    <div class="col-12 text-center"> 
-      <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()" *ngIf="authService.user | async">Logout</button>
-    </div>-->
-  <div class="col text-center">
-    <button type="button" class="btn btn-outline-primary btn-primary" (click)="logout()">להתחלה לחץ כאן</button>
+<form>
+  <div class="form-group">
+    <label>אימייל:</label>
+    <input name='email' [(ngModel)]="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="אימייל">
   </div>
-</div>
-<div class='container' *ngIf="!(authService.user | async)">
+  <div class="form-group">
+    <label>סיסמה:</label>
+    <input name='password' [(ngModel)]="password" type="password" class="form-control" placeholder="סיסמה">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!email || !password">התחבר</button>
+</form>
 
-  <form>
-    <div class="form-group">
-      <label>אימייל:</label>
-      <input name='email' [(ngModel)]="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="אימייל">
-    </div>
-    <div class="form-group">
-      <label>סיסמה:</label>
-      <input name='password' [(ngModel)]="password" type="password" class="form-control" placeholder="סיסמה">
-    </div>
-    <button type="button" class="btn btn-primary" (click)="login()" [disabled]="!email || !password">התחבר</button>
-  </form>
-
-  <!-- 
-  <input type="text" [(ngModel)]="email" placeholder="email">
-  <input type="password" [(ngModel)]="password" placeholder="password">
-  <div class="container">
-    <div class="row">
-      <div class="col text-center">
-
-        <button type="button" class="btn btn-outline-primary btn-primary" (click)="login()" routerLink="/main-screen" [disabled]="!email || !password">
-          Login
-        </button>
-
-      </div>
-    </div>
-  </div> -->
-
-</div>
+<app-loading *ngIf='isLoading'></app-loading>

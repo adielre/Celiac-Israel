@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { FirebaseService } from '../firebase-service/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-edit-screen',
@@ -9,8 +9,9 @@ import { FirebaseService } from '../firebase-service/firebase.service';
 })
 export class AddEditScreenComponent implements OnInit {
   title = 'app';
+  isLoading = false;
   public resColl
-  constructor(private afs: AngularFirestore){
+  constructor(private afs: AngularFirestore, private router: Router){
      
   } 
 
@@ -47,28 +48,34 @@ export class AddEditScreenComponent implements OnInit {
  
 public save(){
     let obj = {
-      namePlace: this.namePlace,
-      Address:this.Address,
-      city: this.city,
-      phone: this.phone,
-      lastmodi:this.lastmodi,
-      email: this.email,
-      opening: this.opening,
-      Description:this.Description,
-      restauranttype: this.restauranttype,
-      TypeOfBusiness:this.TypeOfBusiness,
+      namePlace: this.namePlace.trim(),
+      Address:this.Address.trim(),
+      city: this.city.trim(),
+      phone: this.phone.trim(),
+      lastmodi:this.lastmodi.trim(),
+      email: this.email.trim(),
+      opening: this.opening.trim(),
+      Description:this.Description.trim(),
+      restauranttype: this.restauranttype.trim(),
+      TypeOfBusiness:this.TypeOfBusiness.trim(),
 
       
      sensitivePreferences:  this.sensitivePreferences,
       links:  this.linksUrl,
-      priceRange: this.priceRange,      
-      facilities: this.facilities,
-      moreInfo: this.moreInfo
+      priceRange: this.priceRange.trim(),      
+      facilities: this.facilities.trim(),
+      moreInfo: this.moreInfo.trim()
 
       /*location_in_map: this.location_in_map,
     */
     }
-    this.resColl = this.afs.collection("resturant").doc(this.namePlace).set(obj)
+
+    this.isLoading = true
+    this.resColl = this.afs.collection("resturant").doc(this.namePlace).set(obj).then(res => {
+      this.isLoading = false
+      this.router.navigate(['/main-screen']) //  when the firebase returned, we will go back home
+    })
+
     //this.resColl.add(obj)
   }
   ngOnInit() {

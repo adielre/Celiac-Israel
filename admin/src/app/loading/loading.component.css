@@ -1,0 +1,25 @@
+.container-fluid {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1000000;
+}
+
+#spinner {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40vh;
+}
+
+#spinnertext {
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
