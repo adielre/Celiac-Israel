@@ -6,12 +6,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+<ion-content padding="">
+  <div padding>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+        <ion-label color="primary" stacked>נושא</ion-label>
+        <ion-input [(ngModel)]="subject" type="text" placeholder=" הכנס נושא..."></ion-input>
     </ion-item>
-  </ion-list>
+
+    <ion-item>
+        <ion-label color="primary" stacked>תוכן ההודעה</ion-label>
+        <ion-input [(ngModel)]="body" type="text" placeholder="הכנס תוכן..."></ion-input>
+    </ion-item>
+
+    <button ion-button block (click)="send()">שלח</button>
+  </div>
+
 </ion-content>

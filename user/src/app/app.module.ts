@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 //import {HttpClientModule} from '@angular/common/http'
 import { HttpModule } from '@angular/http';
 import { FirebaseService } from './firebase-service/firebase.service';
+import {EmailComposer} from '@ionic-native/email-composer';
 
 
 
@@ -60,6 +61,7 @@ import { FirebaseService } from './firebase-service/firebase.service';
     StatusBar,
     SplashScreen,
   //  Validators,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
