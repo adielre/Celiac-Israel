@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <div *ngIf='res!=undefined'>
-      <ion-title>{{res.namePlace}} </ion-title>
+      <ion-title>{{res.name}} </ion-title>
     </div>
   </ion-navbar>
 
@@ -19,27 +19,27 @@
 
   <ion-grid *ngIf='res!=undefined'>
 
-    <ion-row *ngIf='res.links.logo'>
+    <ion-row *ngIf='res.logo'>
       <ion-col class='flexCol'>
-        <img src={{res.links.logo}}>
+        <img src={{res.logo}}>
       </ion-col>
     </ion-row>
 
-    <ion-row class='dataRow' *ngIf='res.Description'>
+    <ion-row class='dataRow' *ngIf='res.description'>
         <ion-col>
           תיאור:
         </ion-col>
         <ion-col>
-          {{res.Description}}
+          {{res.description}}
         </ion-col>
       </ion-row>
 
-    <ion-row class='dataRow' *ngIf='res.opening'>
+    <ion-row class='dataRow' *ngIf='res.openingTime'>
       <ion-col>
         שעות פתיחה:
       </ion-col>
       <ion-col>
-        {{res.opening }}
+        {{res.openingTime }}
       </ion-col>
     </ion-row>
 
@@ -54,12 +54,12 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class='dataRow' *ngIf='res.Address'>
+    <ion-row class='dataRow' *ngIf='res.address'>
       <ion-col>
         כתובת:
       </ion-col>
       <ion-col>
-        {{res.Address}}
+        {{res.address}}
       </ion-col>
     </ion-row>
 
@@ -73,25 +73,25 @@
     </ion-row>
 
 
-    <div *ngIf='res.links!=undefined'>
-      <ion-row class='dataRow' *ngIf='res.links.website'>
+ <!--   <div *ngIf='res.links!=undefined'>-->
+      <ion-row class='dataRow' *ngIf='res.website'>
         <ion-col>
           כתובת אתר אינטרנט:
         </ion-col>
         <ion-col>
-          <a href="{{res.links.website}}"> לחץ כאן </a>
+          <a href="{{res.website}}"> לחץ כאן </a>
         </ion-col>
       </ion-row>
-      <ion-row class='dataRow' *ngIf='res.links.facebook'>
+      <ion-row class='dataRow' *ngIf='res.facebook'>
         <ion-col>
           פייסבוק:
         </ion-col>
         <ion-col>
-            <a href="{{res.links.facebook}}"> לחץ כאן </a>
+            <a href="{{res.facebook}}"> לחץ כאן </a>
          
         </ion-col>
       </ion-row>
-    </div>
+  <!--  </div>-->
 
     <ion-row class='dataRow' *ngIf='res.email'>
       <ion-col>
@@ -104,12 +104,12 @@
 
 
 
-    <ion-row class='dataRow' *ngIf='res.moreInfo'>
+    <ion-row class='dataRow' *ngIf='res.moreInformation'>
       <ion-col>
         מידע נוסף:
       </ion-col>
       <ion-col>
-        {{res.moreInfo}}
+        {{res.moreInformation}}
       </ion-col>
     </ion-row>
 
