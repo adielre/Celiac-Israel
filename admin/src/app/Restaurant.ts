@@ -26,9 +26,9 @@ export class Restaurant {
     lastmodi: string= '';
 
     constructor(restObj) {
-        this.name = restObj['namePlace']
+        this.name = restObj['name']
         this.phone = restObj['phone']
-        this.address = restObj['Address']
+        this.address = restObj['address']
         this.id = restObj.id
         this.lastmodi=restObj['lastmodi']
         this.email = restObj['email']
@@ -37,11 +37,11 @@ export class Restaurant {
             this.website = restObj['links']['website']
             this.imageUrl = restObj['links']['logo']
         }
-        this.openingTime = restObj['opening']
-        this.description = restObj['Description']
+        this.openingTime = restObj['openingTime']
+        this.description = restObj['description']
         this.priceRange = restObj['priceRange']
         this.restauranttype = restObj['restauranttype']
-        this.moreInformation = restObj['moreInfo']
+        this.moreInformation = restObj['moreInformation']
         this.additionalPreferences = restObj['sensitivePreferences']['preferences']
         this.sensitivePreferences = restObj['sensitivePreferences']['preferences']
         this.facilities = restObj['facilities']
