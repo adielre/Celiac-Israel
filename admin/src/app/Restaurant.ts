@@ -15,12 +15,13 @@ export class Restaurant {
     description: string = '';
     moreInformation: string = '';
     additionalPreferences: string = '';
-    sensitivePreferences: string = '';
+    preferences: string = '';
     facilities: string = '';
     TypeOfBusiness: string = '';
     kosher: boolean;
     accessibility: boolean;
     gfMenu: boolean;
+    sensitivity: string;
     showOnScreen: boolean = true
     id: string;
     lastmodi: string= '';
@@ -42,14 +43,18 @@ export class Restaurant {
         this.priceRange = restObj['priceRange']
         this.restauranttype = restObj['restauranttype']
         this.moreInformation = restObj['moreInformation']
-        this.additionalPreferences = restObj['sensitivePreferences']['preferences']
-        this.sensitivePreferences = restObj['sensitivePreferences']['preferences']
-        this.facilities = restObj['facilities']
-        this.kosher = restObj['sensitivePreferences']['kosher']
-        this.accessibility = restObj['sensitivePreferences']['accessibility']
-        this.gfMenu = restObj['sensitivePreferences']['gfMenu']
         this.TypeOfBusiness = restObj['TypeOfBusiness']
         this.city = restObj['city']
+        this.facilities = restObj['facilities']
+        if(restObj['sensitivePreferences']){        
+            this.accessibility = restObj['sensitivePreferences']['accessibility'] 
+            this.gfMenu = restObj['sensitivePreferences']['gfMenu']
+            this.kosher = restObj['sensitivePreferences']['kosher']
+            this.additionalPreferences = restObj['sensitivePreferences']['additionalPreferences']
+            this.preferences = restObj['sensitivePreferences']['preferences']
+            this.sensitivity=restObj['sensitivePreferences']['sensitivity']
+        }
+        
     }
 
 }

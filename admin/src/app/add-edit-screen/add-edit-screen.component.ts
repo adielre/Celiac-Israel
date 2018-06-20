@@ -28,8 +28,8 @@ export class AddEditScreenComponent implements OnInit {
   website: string='';
    logo: string='';
    facebook:  string='';
-  sensitivePreferences: {gfMenu: boolean,sensitivity?: string,preferences?: string, accessibility: boolean, kosher: boolean}={
-    gfMenu: false/*Gluten free menu*/,sensitivity: "",preferences: "", accessibility: false, kosher: false
+  sensitivePreferences: {additionalPreferences?: string, gfMenu: boolean,sensitivity?: string,preferences?: string, accessibility: boolean, kosher: boolean}={
+    additionalPreferences:"", gfMenu: false/*Gluten free menu*/,sensitivity: "",preferences: "", accessibility: false, kosher: false
   }
  /* linksUrl:{ website?: string, logo?: string ,facebook?:  string;}={
     website: "", logo:"",   facebook:  ""
