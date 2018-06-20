@@ -25,13 +25,15 @@ export class AddEditScreenComponent implements OnInit {
   restauranttype: string='';
   description: string='';
   openingTime: string='';
- 
+  website: string='';
+   logo: string='';
+   facebook:  string='';
   sensitivePreferences: {gfMenu: boolean,sensitivity?: string,preferences?: string, accessibility: boolean, kosher: boolean}={
     gfMenu: false/*Gluten free menu*/,sensitivity: "",preferences: "", accessibility: false, kosher: false
   }
-  linksUrl:{ website?: string, logo?: string ,facebook?:  string;}={
+ /* linksUrl:{ website?: string, logo?: string ,facebook?:  string;}={
     website: "", logo:"",   facebook:  ""
-  }
+  }*/
  /* location_in_map:{x:number, y: number}={
     x:0, y:0
   }*/
@@ -56,10 +58,12 @@ public save(){
       description:this.description.trim(),
       restauranttype: this.restauranttype.trim(),
       TypeOfBusiness:this.TypeOfBusiness.trim(),
-
+      website: this.website.trim(),
+      logo: this.logo.trim(),
+      facebook:  this.facebook.trim(),
       
-     sensitivePreferences:  this.sensitivePreferences,
-      links:  this.linksUrl,
+      sensitivePreferences:  this.sensitivePreferences,
+      //links:  this.linksUrl,
       priceRange: this.priceRange.trim(),      
       facilities: this.facilities.trim(),
       moreInformation: this.moreInformation.trim()

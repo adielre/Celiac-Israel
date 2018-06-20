@@ -6,7 +6,7 @@ export class Restaurant {
     city: string = '';
     phone: string = '';
     website: string = '';
-    imageUrl: string = '';
+    logo: string = '';
     facebook: string = '';
     email: string = '';
     openingTime: string = '';
@@ -32,11 +32,11 @@ export class Restaurant {
         this.id = restObj.id
         this.lastmodi=restObj['lastmodi']
         this.email = restObj['email']
-        if (restObj['links']) {
-            this.facebook = restObj['links']['facebook']
-            this.website = restObj['links']['website']
-            this.imageUrl = restObj['links']['logo']
-        }
+        
+        this.facebook = restObj['facebook']
+        this.website = restObj['website']
+        this.logo = restObj['logo']
+        
         this.openingTime = restObj['openingTime']
         this.description = restObj['description']
         this.priceRange = restObj['priceRange']
