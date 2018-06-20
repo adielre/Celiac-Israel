@@ -63,7 +63,7 @@ export class Page2Page {
    * @param res the resturant that the user click on it
    */
   move(res) {
-    console.log(res.namePlace);
+    console.log(res.name);
     this.navCtrl.push(DetailsPage, { result: res });
   }
 
